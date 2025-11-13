@@ -12,12 +12,31 @@ import React from 'react'
 export default function CookiesPage() {
   return (
     <article className="mx-auto max-w-3xl px-4 sm:px-6 py-10 prose prose-slate">
-      <h1>Polityka Cookies</h1>
-      <p>Używamy wyłącznie cookies niezbędnych do funkcjonowania strony (np. zapamiętanie decyzji o cookies).</p>
-      <h2>Twoje wybory</h2>
-      <p>Możesz w każdej chwili usunąć zgodę – wyczyść pamięć przeglądarki (localStorage: cookie-consent).</p>
-      <h2>Brak śledzenia</h2>
-      <p>Nie używamy analityki naruszającej prywatność bez uprzedniej zgody.</p>
+<h1>Polityka Cookies</h1>
+  <section>
+    <h2>Czym są pliki cookies?</h2>
+    <p>
+      Cookies to niewielkie pliki tekstowe zapisywane na urządzeniu użytkownika. Strona mBit.pm używa wyłącznie niezbędnych cookies do zapewnienia podstawowej funkcjonalności (np. zapamiętanie wyboru języka, sesji użytkownika).
+    </p>
+  </section>
+  <section>
+    <h2>Jak zarządzać cookies?</h2>
+    <p>
+      Użytkownik może w każdej chwili usunąć lub zablokować cookies poprzez ustawienia swojej przeglądarki internetowej. Ograniczenie stosowania plików cookies może wpłynąć na działanie niektórych funkcji strony.
+    </p>
+  </section>
+  <section>
+    <h2>Czy używamy cookies zewnętrznych?</h2>
+    <p>
+      Nie korzystamy z cookies zewnętrznych ani trackingowych.
+    </p>
+  </section>
+  <section>
+    <h2>Kontakt</h2>
+    <p>
+      W sprawach polityki cookies i prywatności prosimy pisać na adres <a href="mailto:kontakt@mbit.pm">kontakt@mbit.pm</a>.
+    </p>
+  </section>
     </article>
   )
 }
