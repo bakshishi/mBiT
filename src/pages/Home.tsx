@@ -1,7 +1,7 @@
 /**
  * File: Home.tsx
  * Purpose: Home page with brand hero and a full set of section tiles (Meshtastic, MeshCore, Reticulum, PMR446, CB, Plan, Systemy, Zasoby).
- * Images use SmartImage with relative paths ("images/...") to work on GitHub Pages.
+ * Images use SmartImage with relative paths ("images/...") to work on GitHub Pages. To chyba nie działa.
  */
 
 import React from 'react'
