@@ -55,7 +55,7 @@ export default function HomePage() {
             <div className="rounded-lg overflow-hidden ring-1 ring-white/20">
               <img
                 src="graph/generated_image.png"
-                alt="Siatka łączności mesh w mieście"
+                alt="Siatka łączności meshBiT"
                 className="h-full w-full object-cover aspect-video"
                 loading="lazy"
               />
