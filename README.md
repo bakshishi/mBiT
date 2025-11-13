@@ -1,4 +1,4 @@
-# mBiT.pm — Mesh Bydgoszcz i Toruń
+# mBiT.pm - Mesh Bydgoszcz i Toruń
 
 Production-ready React + TypeScript site focusing on emergency communications (Meshtastic, MeshCore, Reticulum, PMR446, CB).
 
@@ -33,6 +33,6 @@ Deployment Checklist (server/CDN)
 - Regular accessibility audits (WAVE, axe).
 
 Notes
-- Images use placeholder generator: https://sider.ai/autoimage/...
+- Images use placeholder generator: https://sider.ai/autoimage/... ale to nei działa są puste miejsca po grafikach
 - CLI commands include EU_868 + LONG_FAST with hop limit 3.
 - EU rule: duty cycle 10% (max 6 min/hour).
