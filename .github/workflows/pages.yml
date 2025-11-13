@@ -1,9 +1,8 @@
-# GitHub Pages workflow for React + esbuild (HashRouter). Builds to 'dist' and deploys.
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -22,28 +21,43 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
-      # If package-lock.json is missing, npm ci will fail; fall back to npm install
-      - name: Install deps
-        run: npm ci || npm install
+      - name: Install dependencies (ci or install)
+        run: |
+          npm ci || npm install
 
       - name: Build
         run: npm run build
 
-      # Adjust 'dist' below if your build script outputs to a different directory
-      - name: Upload artifact
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Detect build output
+        id: detect
+        run: |
+          for dir in dist build public out; do
+            if [ -d "$dir" ]; then
+              echo "dir=$dir" >> $GITHUB_OUTPUT
+              echo "Using $dir as Pages artifact"
+              exit 0
+            fi
+          done
+          echo "No build output folder (dist/build/public/out) found." >&2
+          echo "dir=dist" >> $GITHUB_OUTPUT
+          ls -la
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ steps.detect.outputs.dir }}
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
