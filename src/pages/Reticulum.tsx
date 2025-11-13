@@ -26,7 +26,7 @@ export default function ReticulumPage() {
         <li>Częstotliwość: 868–869.525 MHz</li>
         <li>BW: 125 kHz, SF: 10+, CR: 4/8 (zalecenia dla 868 MHz)</li>
         <li>Moc: zgodnie z regulacjami EU, duty cycle 10%/h</li>
-        <li>Zasięg: kilometry w mieście, &gt;100 km przy LOS</li>
+        <li>Zasięg: kilometry w mieście, '>'100 km przy LOS</li>
         </ul>
       </section>
 
