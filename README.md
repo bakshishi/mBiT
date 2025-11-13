@@ -19,12 +19,10 @@ Branding
 - Gradient primary: #667eea → #764ba2
 - Motto: Connectivity Without Limits
 
-
 WCAG & GDPR
 - Semantic headings, skip link, focus indicators, alt text, keyboard nav.
 - Cookie banner stores consent in localStorage; no tracking by default.
 - Separate pages for Privacy, Cookies, Accessibility, EAA.
-
 
 Deployment Checklist (server/CDN)
 - HTTPS only (TLS, HSTS), HTTP->HTTPS redirect.
@@ -33,7 +31,6 @@ Deployment Checklist (server/CDN)
 - Add sitemap.xml and robots.txt.
 - Preconnect to required external origins.
 - Regular accessibility audits (WAVE, axe).
-
 
 Notes
 - Images use placeholder generator: https://sider.ai/autoimage/...
