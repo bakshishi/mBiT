@@ -43,13 +43,13 @@ export default function ReticulumPage() {
         <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
         <li>
           Oficjalna dokumentacja:{" "}
-          <a href="https://reticulum.network" target="_blank" rel="noreferrer">
+          <a className="text-[#667eea] underline" target="_blank" rel="noopener noreferrer" href="https://reticulum.network" target="_blank" rel="noreferrer">
             reticulum.network
           </a>
         </li>
         <li>
           RNode:{" "}
-          <a href="https://unsigned.io/rnode/" target="_blank" rel="noreferrer">
+          <a className="text-[#667eea] underline" target="_blank" rel="noopener noreferrer" href="https://unsigned.io/rnode/" target="_blank" rel="noreferrer">
             unsigned.io/rnode
           </a>
         </li>
