@@ -1,124 +1,121 @@
 /**
  * File: Home.tsx
- * Purpose: Home page with hero section, brand messaging, and entry cards to key sections.
+ * Purpose: Landing page with hero, clear entry points to key sections, and brand visuals.
  */
 
 import React from 'react'
 import { NavLink } from 'react-router'
-import { ArrowRight, ExternalLink } from 'lucide-react'
 
 /**
  * HomePage
- * Landing page presenting the mission, key calls-to-action, and quick navigation.
+ * Presents the brand hero and navigation cards for the primary topics.
  */
 export default function HomePage() {
+  const cards: Array<{
+    to: string
+    title: string
+    desc: string
+    img: string
+  }> = [
+    {
+      to: '/meshtastic',
+      title: 'Meshtastic',
+      desc: 'Otwarto-źródłowa komunikacja LoRa mesh. Preset LONG_FAST i 10% duty cycle.',
+      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/1f0622f7-5ae9-45e7-863c-3211b3520aa2.jpg',
+    },
+    {
+      to: '/meshcore',
+      title: 'MeshCore',
+      desc: 'Lekka alternatywa z direct path routing. Niskie zużycie energii.',
+      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/39922df6-5deb-44f7-8939-c42319448dd0.jpg',
+    },
+    {
+      to: '/reticulum',
+      title: 'Reticulum',
+      desc: 'Zaawansowana, szyfrowana sieć. Suwerenna komunikacja i mostkowanie.',
+      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/c20c96b9-a38b-494f-99a2-c61a27249ad0.jpg',
+    },
+    {
+      to: '/pmr446',
+      title: 'PMR446',
+      desc: 'Walkie-talkie UHF bez licencji. 16 kanałów, 500 mW ERP.',
+      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/695bed44-c57c-41e7-a3c7-9fdd4a8dcf6f.jpg',
+    },
+    {
+      to: '/cb',
+      title: 'CB Radio',
+      desc: 'Pas 27 MHz. Komunikacja lokalna i DX w sprzyjających warunkach.',
+      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/cf8d076f-af85-45b8-9885-9a4d233c97df.jpg',
+    },
+    {
+      to: '/plan',
+      title: 'Plan Awaryjny',
+      desc: 'Strategia multi-system: PMR, Meshtastic, CB, opcjonalnie radio amatorskie.',
+      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/0c5f4897-ca3d-4888-a354-564effb71ddb.jpg',
+    },
+  ]
+
   return (
-    <>
+    <div className="relative">
       {/* Hero */}
-      <section
-        className="relative isolate bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white"
-        aria-label="Wprowadzenie"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
-          <div className="grid gap-8 md:grid-cols-2 items-center">
+      <section className="bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+          <div className="grid gap-8 lg:grid-cols-2 items-center">
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold">
-                Mesh Bydgoszcz i Toruń — mBiT.pm
+                Mesh Bydgoszcz i Toruń
               </h1>
-              <p className="mt-4 text-white/90">
-                Platforma wiedzy o łączności awaryjnej: Meshtastic, MeshCore, Reticulum, PMR446 i CB.
-                Profesjonalnie, dostępnie, zgodnie z WCAG 2.1 AA i RODO.
+              <p className="mt-3 text-white/90 max-w-prose">
+                Connectivity Without Limits — platforma o łączności awaryjnej:
+                Meshtastic, MeshCore, Reticulum, PMR446 i CB. Skuteczna, zgodna z WCAG i RODO.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <NavLink
                   to="/meshtastic"
-                  className="inline-flex items-center gap-2 rounded bg-white text-slate-900 px-4 py-2 font-medium hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="inline-flex items-center rounded-md bg-white text-slate-900 px-4 py-2 font-medium hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                  Zacznij od Meshtastic
-                  <ArrowRight size={16} aria-hidden="true" />
+                  Zaczynam z Meshtastic
                 </NavLink>
-                <a
-                  href="https://t.me/meshtasticbdg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded border border-white/60 px-4 py-2 font-medium hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                <NavLink
+                  to="/plan"
+                  className="inline-flex items-center rounded-md bg-slate-900/20 text-white px-4 py-2 font-medium ring-1 ring-white/40 hover:bg-slate-900/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                  Dołącz do Telegram (Bydgoszcz)
-                  <ExternalLink size={16} aria-hidden="true" />
-                </a>
+                  Plan Awaryjny
+                </NavLink>
               </div>
-              <p className="mt-4 text-sm text-white/90">
-                Kluczowe: Bydgoszcz używa presetu <span className="font-semibold">LONG_FAST</span>.
-                W EU obowiązuje <span className="font-semibold">duty cycle 10%</span> — maksymalnie 6 minut transmisji/godz.
-              </p>
             </div>
             <div className="rounded-lg overflow-hidden ring-1 ring-white/20">
               <img
-                src="graph/generated_image.png"
-                alt="Siatka łączności meshBiT"
-                className="h-full w-full object-cover aspect-video"
-                loading="lazy"
+                src="https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/1887557f-dcd0-4078-9e91-e0fcde427a7c.jpg"
+                alt=""
+                className="w-full h-64 sm:h-72 object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Entrances */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12" aria-label="Wejścia do sekcji">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { to: '/meshtastic', title: 'Meshtastic', desc: 'Konfiguracja EU/PL (EU_868, LONG_FAST), presety, netykieta.' },
-            { to: '/meshcore', title: 'MeshCore', desc: 'Lekka alternatywa. EU/UK Narrow preset.' },
-            { to: '/reticulum', title: 'Reticulum', desc: 'Szyfrowana sieć, RNode, prywatność i bezpieczeństwo.' },
-            { to: '/pmr446', title: 'PMR446', desc: 'Bezlicencyjne UHF, kanały CEPT, dobre praktyki.' },
-            { to: '/cb', title: 'CB Radio', desc: 'Pas 27 MHz, kanały, propagacja i zasady.' },
-            { to: '/plan', title: 'Plan Awaryjny', desc: 'Koncepcja wielosystemowa, procedury i sprzęt.' },
-          ].map((c) => (
+      {/* Cards */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
+        <h2 className="text-xl font-semibold text-slate-900">Szybkie wejścia</h2>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {cards.map((c) => (
             <NavLink
               key={c.to}
               to={c.to}
-              className="group block rounded-lg bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
+              className="group rounded-lg bg-white ring-1 ring-slate-200 hover:ring-slate-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 overflow-hidden"
             >
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-slate-900">{c.title}</h3>
-                <p className="mt-1 text-sm text-slate-700">{c.desc}</p>
-                <span className="mt-3 inline-flex items-center gap-1 text-sm text-[#667eea]">
-                  Przejdź
-                  <ArrowRight size={14} aria-hidden="true" className="transition -translate-x-0 group-hover:translate-x-0.5" />
-                </span>
+              <div className="h-40">
+                <img src={c.img} className="object-cover w-full h-full" alt="" />
+              </div>
+              <div className="p-4">
+                <h3 className="text-slate-900 font-semibold">{c.title}</h3>
+                <p className="text-slate-600 text-sm mt-1">{c.desc}</p>
               </div>
             </NavLink>
           ))}
         </div>
       </section>
-
-      {/* Stats / Highlights */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-8" aria-label="Najważniejsze informacje">
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-lg bg-white p-5 ring-1 ring-slate-200">
-            <h3 className="text-sm font-semibold text-slate-900">Rekordowy zasięg Meshtastic</h3>
-            <p className="text-2xl font-bold mt-2 text-slate-900">331 km</p>
-            <p className="text-sm text-slate-700 mt-1">Warunki LOS, zgodnie z dokumentacją i społecznością.</p>
-          </div>
-          <div className="rounded-lg bg-white p-5 ring-1 ring-slate-200">
-            <h3 className="text-sm font-semibold text-slate-900">Test łączności</h3>
-            <p className="text-sm text-slate-700 mt-2">
-              Każdego 3. dnia miesiąca oraz w ostatnią sobotę o 20:00.
-              Więcej:{' '}
-              <a className="text-[#667eea] underline" target="_blank" rel="noopener noreferrer" href="https://planawaryjny.com/lacznosc-awaryjna/">
-                planawaryjny.com
-              </a>
-            </p>
-          </div>
-          <div className="rounded-lg bg-white p-5 ring-1 ring-slate-200">
-            <h3 className="text-sm font-semibold text-slate-900">EU: Duty Cycle</h3>
-            <p className="text-sm text-slate-700 mt-2">
-              Limit 10% na godzinę (rolling), maks. 6 minut transmisji/godzinę. Przestrzegaj regulacji.
-            </p>
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   )
 }

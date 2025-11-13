@@ -1,51 +1,51 @@
 /**
  * File: Reticulum.tsx
- * Purpose: Reticulum secure networking overview for PL/EU with LoRa configuration and RNode.
+ * Purpose: Reticulum overview page with safe JSX content (escapes special characters).
  */
 
 import React from 'react'
 
 /**
  * ReticulumPage
- * Presents Reticulum fundamentals, security model, and LoRa parameters for Poland.
+ * High-level intro, LoRa params for PL/EU, and links to official resources.
  */
 export default function ReticulumPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">Reticulum — Bezpieczna sieć</h1>
-        <p className="text-slate-700 mt-1">
-          Kryptografia Curve25519, end‑to‑end, brak centralnego nadzoru. Narzędzie do budowy suwerennych sieci.
-        </p>
-      </header>
+    <article className="mx-auto max-w-3xl px-4 sm:px-6 py-10 prose prose-slate">
+      <h1>Reticulum — Suwerenna Sieć Szyfrowana</h1>
+      <p>
+        Reticulum to oparty na kryptografii stos sieciowy do budowy lokalnych i rozległych sieci
+        z wykorzystaniem łatwo dostępnego sprzętu. Nie jest jedną siecią — to narzędzie do
+        tworzenia tysięcy niezależnych sieci, które mogą współpracować lub działać autonomicznie.
+      </p>
 
-      <section aria-labelledby="sec">
-        <h2 id="sec" className="text-lg font-semibold text-slate-900">Bezpieczeństwo i prywatność</h2>
-        <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-          <li>E2E obowiązkowe, anonimowość nadawcy domyślnie.</li>
-          <li>Brak inspekcji ruchu; niepodrabialne potwierdzenia doręczeń.</li>
-        </ul>
-      </section>
+      <h2>Bezpieczeństwo</h2>
+      <ul>
+        <li>ECDH (Curve25519) i obowiązkowe end-to-end encryption.</li>
+        <li>Anonimowość nadawcy domyślnie, brak inspekcji ruchu.</li>
+        <li>Potwierdzenia doręczeń niewymazywalne (unforgeable acks).</li>
+      </ul>
 
-      <section aria-labelledby="lora" className="mt-8">
-        <h2 id="lora" className="text-lg font-semibold text-slate-900">Konfiguracja LoRa — Polska</h2>
-        <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-          <li>Frequency: 868 MHz lub 869.525 MHz</li>
-          <li>Spreading Factor: ≥ 10</li>
-          <li>Bandwidth: 125 kHz</li>
-          <li>Coding Rate: 4/8</li>
-          <li>Power: zgodnie z regulacjami EU</li>
-          <li>Zasięg: kilometry w mieście, &gt;100 km LOS</li>
-        </ul>
-      </section>
+      <h2>Parametry LoRa dla Polski</h2>
+      <ul>
+        <li>Częstotliwość: 868 MHz lub 869.525 MHz</li>
+        <li>Bandwidth: 125 kHz</li>
+        <li>Spreading Factor: 10 (minimum)</li>
+        <li>Coding Rate: 4/8</li>
+        <li>Moc: zgodnie z regulacjami EU</li>
+      </ul>
 
-      <section aria-labelledby="rnode" className="mt-8">
-        <h2 id="rnode" className="text-lg font-semibold text-slate-900">RNode i interfejsy</h2>
-        <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-          <li>Interfejsy: LoRa Radio, Packet Radio (Ham), Wi‑Fi, Internet (tunneling TCP/UDP).</li>
-          <li>Zakres częstotliwości: 433/868/915 MHz, 2.4 GHz.</li>
-        </ul>
-      </section>
-    </div>
+      <h2>RNode i Interfejsy</h2>
+      <p>
+        RNode to otwarty transceiver (unsigned.io/rnode). Obsługiwane pasma: 433/868/915 MHz, 2.4 GHz.
+        Przepływności od setek bit/s do kilku Mbit/s. Zasięg: kilometry w mieście, &gt;100 km przy LOS.
+      </p>
+
+      <h2>Zasoby</h2>
+      <ul>
+        <li>Oficjalna strona: reticulum.network</li>
+        <li>Dokumentacja: GitHub markqvist/Reticulum i Reticulum Manual (PDF)</li>
+      </ul>
+    </article>
   )
 }

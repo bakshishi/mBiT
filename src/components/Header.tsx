@@ -1,6 +1,7 @@
 /**
  * File: Header.tsx
  * Purpose: Sticky site header with accessible navigation and mobile menu.
+ * Notes: Top bar shows only primary navigation (policy links removed as requested).
  */
 
 import React from 'react'
@@ -20,6 +21,7 @@ export default function Header() {
     setOpen((o) => !o)
   }
 
+  /** Primary navigation items shown in the top bar */
   const navItems: Array<{ to: string; label: string }> = [
     { to: '/', label: 'Start' },
     { to: '/meshtastic', label: 'Meshtastic' },
@@ -29,13 +31,6 @@ export default function Header() {
     { to: '/cb', label: 'CB Radio' },
     { to: '/plan', label: 'Plan Awaryjny' },
     { to: '/systems', label: 'Systemy' },
-  ]
-
-  const policyItems: Array<{ to: string; label: string }> = [
-    { to: '/accessibility', label: 'Dostępność' },
-    { to: '/eaa', label: 'EU Accessibility Act' },
-    { to: '/privacy', label: 'Prywatność' },
-    { to: '/cookies', label: 'Cookies' },
   ]
 
   const linkBase =
@@ -57,7 +52,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Desktop nav */}
+          {/* Desktop nav (policy links removed) */}
           <nav aria-label="Główne" className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <NavLink
@@ -68,22 +63,6 @@ export default function Header() {
                     isActive
                       ? 'text-white bg-gradient-to-r from-[#667eea] to-[#764ba2]'
                       : 'text-slate-800 hover:bg-slate-100'
-                  }`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-            <div className="h-6 w-px bg-slate-300 mx-2" aria-hidden="true" />
-            {policyItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  `${linkBase} ${
-                    isActive
-                      ? 'text-white bg-slate-900'
-                      : 'text-slate-700 hover:bg-slate-100'
                   }`
                 }
               >
@@ -105,14 +84,14 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile nav */}
+      {/* Mobile nav (policy links removed) */}
       <div
         id="mobile-menu"
         hidden={!open}
         className="md:hidden border-t border-slate-200 bg-white"
       >
         <nav aria-label="Główne - mobilne" className="px-4 py-3 grid gap-1">
-          {[...navItems, ...policyItems].map((item) => (
+          {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
