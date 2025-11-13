@@ -12,17 +12,31 @@ import React from 'react'
 export default function AccessibilityPage() {
   return (
     <article className="mx-auto max-w-3xl px-4 sm:px-6 py-10 prose prose-slate">
-      <h1>Deklaracja Dostępności (WCAG 2.1 AA)</h1>
-      <p>Serwis mBiT.pm dąży do pełnej zgodności z WCAG 2.1 AA i EN 301 549.</p>
-      <h2>Kluczowe funkcje</h2>
-      <ul>
-        <li>Semantyczny HTML5, nawigacja klawiaturą, widoczny focus, alt dla obrazów.</li>
-        <li>Skip link do treści głównej, ARIA label dla elementów interaktywnych.</li>
-      </ul>
-      <h2>Testowanie</h2>
-      <p>Weryfikacja z użyciem WAVE i axe DevTools, testy na urządzeniach mobilnych.</p>
-      <h2>Kontakt</h2>
-      <p>Zgłoszenia barier: accessibility@mbit.pm</p>
+  <h1>Oświadczenie dostępności cyfrowej (WCAG 2.1 AA)</h1>
+  <section>
+    <h2>Deklaracja dostępności</h2>
+    <p>
+      Projekt mBit.pm zobowiązuje się zapewnić dostępność strony zgodnie z wytycznymi WCAG 2.1 na poziomie AA. Strona jest w pełni responsywna, czytelna na wszystkich urządzeniach i dostępna dla osób z niepełnosprawnościami.
+    </p>
+  </section>
+  <section>
+    <h2>Kluczowe elementy dostępności</h2>
+    <ul>
+      <li>Kontrast tekstu: min. 4.5:1</li>
+      <li>Widoczne focus indicators</li>
+      <li>Nawigacja klawiaturą</li>
+      <li>Alt tekst dla wszystkich grafik</li>
+      <li>Skip navigation link</li>
+      <li>Strukturalne nagłówki semantyczne</li>
+      <li>Kompatybilność z czytnikami ekranu</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Uwagi i kontakt</h2>
+    <p>
+      W przypadku problemów z dostępnością prosimy o kontakt: <a href="mailto:kontakt@mbit.pm">kontakt@mbit.pm</a>. Staramy się usuwać bariery cyfrowe na bieżąco.
+    </p>
+  </section>
     </article>
   )
 }
