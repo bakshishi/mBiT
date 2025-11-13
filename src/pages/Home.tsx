@@ -1,7 +1,7 @@
 /**
  * File: Home.tsx
  * Purpose: Home page with brand hero and a full set of section tiles (Meshtastic, MeshCore, Reticulum, PMR446, CB, Plan, Systemy, Zasoby).
- * Images are handled via SmartImage with safe fallbacks.
+ * Images use SmartImage with relative paths ("images/...") to work on GitHub Pages.
  */
 
 import React from 'react'
@@ -13,16 +13,16 @@ import SmartImage from '../components/SmartImage'
  * Hero section + grid of navigational cards linking to key content areas.
  */
 export default function HomePage() {
-  /** Cards displayed on the homepage. Replace `img` paths with your files in /public/images. */
+  /** Cards displayed on the homepage. Place your files in public/images (e.g. meshtastic.webp). */
   const cards = [
-    { title: 'Meshtastic', to: '/meshtastic', desc: 'EU_868 · LONG_FAST · hop 3 · 10% duty.', img: '/images/meshtastic.webp', kw: 'lora mesh radio' },
-    { title: 'MeshCore', to: '/meshcore', desc: 'EU/UK Narrow · 869.618 MHz · BW 62.5 kHz.', img: '/images/meshcore.webp', kw: 'lora narrowband' },
-    { title: 'Reticulum', to: '/reticulum', desc: 'Suwerenne, szyfrowane sieci LoRa.', img: '/images/reticulum.webp', kw: 'encryption network' },
-    { title: 'PMR446', to: '/pmr446', desc: 'Walkie-talkie UHF bez licencji.', img: '/images/pmr.webp', kw: 'uhf handheld radio' },
-    { title: 'CB', to: '/cb', desc: 'Pasmo 27 MHz — łączność mobilna.', img: '/images/cb.webp', kw: 'cb radio' },
-    { title: 'Plan', to: '/plan', desc: 'Koncepcja wielosystemowa i procedury.', img: '/images/plan.webp', kw: 'emergency plan' },
-    { title: 'Systemy', to: '/systems', desc: 'Dodatkowe systemy i checklist.', img: '/images/systems.webp', kw: 'systems overview' },
-    { title: 'Zasoby', to: '/resources', desc: 'Przewodniki, fora, mapy i społeczności.', img: '/images/resources.webp', kw: 'links library' }
+    { title: 'Meshtastic', to: '/meshtastic', desc: 'EU_868 · LONG_FAST · hop 3 · 10% duty.', img: 'images/meshtastic.webp', kw: 'lora mesh radio' },
+    { title: 'MeshCore', to: '/meshcore', desc: 'EU/UK Narrow · 869.618 MHz · BW 62.5 kHz.', img: 'images/meshcore.webp', kw: 'lora narrowband' },
+    { title: 'Reticulum', to: '/reticulum', desc: 'Suwerenne, szyfrowane sieci LoRa.', img: 'images/reticulum.webp', kw: 'encryption network' },
+    { title: 'PMR446', to: '/pmr446', desc: 'Walkie-talkie UHF bez licencji.', img: 'images/pmr.webp', kw: 'uhf handheld radio' },
+    { title: 'CB', to: '/cb', desc: 'Pasmo 27 MHz — łączność mobilna.', img: 'images/cb.webp', kw: 'cb radio' },
+    { title: 'Plan', to: '/plan', desc: 'Koncepcja wielosystemowa i procedury.', img: 'images/plan.webp', kw: 'emergency plan' },
+    { title: 'Systemy', to: '/systems', desc: 'Dodatkowe systemy i checklist.', img: 'images/systems.webp', kw: 'systems overview' },
+    { title: 'Zasoby', to: '/resources', desc: 'Przewodniki, fora, mapy i społeczności.', img: 'images/resources.webp', kw: 'links library' }
   ]
 
   return (
@@ -58,7 +58,7 @@ export default function HomePage() {
           </div>
           <div className="relative">
             <SmartImage
-              src="/images/hero-mesh.webp"
+              src="images/hero-mesh.webp"
               alt="Ilustracja sieci mesh nad miastem"
               className="w-full h-64 md:h-80 rounded-xl object-cover ring-1 ring-slate-200"
               fallbackKeyword="mesh network city"
