@@ -1,8 +1,8 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -11,57 +11,49 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Use Node.js 20
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      - name: Install dependencies (ci or install)
-        run: |
-          npm ci || npm install
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Build
+      - name: Build (production)
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Detect build output
-        id: detect
+      - name: Copy public to dist
         run: |
-          for dir in dist build public out; do
-            if [ -d "$dir" ]; then
-              echo "dir=$dir" >> $GITHUB_OUTPUT
-              echo "Using $dir as Pages artifact"
-              exit 0
-            fi
-          done
-          echo "No build output folder (dist/build/public/out) found." >&2
-          echo "dir=dist" >> $GITHUB_OUTPUT
-          ls -la
+          if [ -d public ]; then
+            mkdir -p dist
+            cp -R public/* dist/
+          fi
 
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.detect.outputs.dir }}
+          path: dist
 
   deploy:
-    runs-on: ubuntu-latest
+    name: Deploy
     needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
