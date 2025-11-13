@@ -1,6 +1,6 @@
 /**
  * File: Home.tsx
- * Purpose: Landing page with hero, clear entry points to key sections, and brand visuals.
+ * Purpose: Visible, welcoming home page with brand hero, clear entrances to key sections.
  */
 
 import React from 'react'
@@ -8,113 +8,92 @@ import { NavLink } from 'react-router'
 
 /**
  * HomePage
- * Presents the brand hero and navigation cards for the primary topics.
+ * Hero section + quick tiles linking to core content areas.
  */
 export default function HomePage() {
-  const cards: Array<{
-    to: string
-    title: string
-    desc: string
-    img: string
-  }> = [
-    {
-      to: '/meshtastic',
-      title: 'Meshtastic',
-      desc: 'Otwarto-źródłowa komunikacja LoRa mesh. Preset LONG_FAST i 10% duty cycle.',
-      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/1f0622f7-5ae9-45e7-863c-3211b3520aa2.jpg',
-    },
-    {
-      to: '/meshcore',
-      title: 'MeshCore',
-      desc: 'Lekka alternatywa z direct path routing. Niskie zużycie energii.',
-      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/39922df6-5deb-44f7-8939-c42319448dd0.jpg',
-    },
-    {
-      to: '/reticulum',
-      title: 'Reticulum',
-      desc: 'Zaawansowana, szyfrowana sieć. Suwerenna komunikacja i mostkowanie.',
-      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/c20c96b9-a38b-494f-99a2-c61a27249ad0.jpg',
-    },
-    {
-      to: '/pmr446',
-      title: 'PMR446',
-      desc: 'Walkie-talkie UHF bez licencji. 16 kanałów, 500 mW ERP.',
-      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/695bed44-c57c-41e7-a3c7-9fdd4a8dcf6f.jpg',
-    },
-    {
-      to: '/cb',
-      title: 'CB Radio',
-      desc: 'Pas 27 MHz. Komunikacja lokalna i DX w sprzyjających warunkach.',
-      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/cf8d076f-af85-45b8-9885-9a4d233c97df.jpg',
-    },
-    {
-      to: '/plan',
-      title: 'Plan Awaryjny',
-      desc: 'Strategia multi-system: PMR, Meshtastic, CB, opcjonalnie radio amatorskie.',
-      img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/0c5f4897-ca3d-4888-a354-564effb71ddb.jpg',
-    },
-  ]
-
   return (
-    <div className="relative">
+    <div className="bg-slate-50">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
-          <div className="grid gap-8 lg:grid-cols-2 items-center">
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-bold">
-                Mesh Bydgoszcz i Toruń
-              </h1>
-              <p className="mt-3 text-white/90 max-w-prose">
-                Connectivity Without Limits — platforma o łączności awaryjnej:
-                Meshtastic, MeshCore, Reticulum, PMR446 i CB. Skuteczna, zgodna z WCAG i RODO.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <NavLink
-                  to="/meshtastic"
-                  className="inline-flex items-center rounded-md bg-white text-slate-900 px-4 py-2 font-medium hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                >
-                  Zaczynam z Meshtastic
-                </NavLink>
-                <NavLink
-                  to="/plan"
-                  className="inline-flex items-center rounded-md bg-slate-900/20 text-white px-4 py-2 font-medium ring-1 ring-white/40 hover:bg-slate-900/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                >
-                  Plan Awaryjny
-                </NavLink>
-              </div>
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 md:py-16 grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight text-slate-900">
+              Mesh Bydgoszcz i Toruń
+            </h1>
+            <p className="mt-3 text-slate-700">
+              Connectivity Without Limits — wiedza i praktyka o łączności awaryjnej: Meshtastic,
+              MeshCore, Reticulum, PMR446 i CB. Sprawdzone ustawienia, dobre praktyki i plan awaryjny.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <NavLink
+                to="/meshtastic"
+                className="inline-flex items-center rounded-md bg-gradient-to-r from-[#667eea] to-[#764ba2] px-4 py-2 text-white font-medium hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
+              >
+                Start z Meshtastic
+              </NavLink>
+              <NavLink
+                to="/plan"
+                className="inline-flex items-center rounded-md bg-white px-4 py-2 text-slate-900 font-medium border border-slate-200 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-300"
+              >
+                Plan awaryjny
+              </NavLink>
             </div>
-            <div className="rounded-lg overflow-hidden ring-1 ring-white/20">
-              <img
-                src="https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/1887557f-dcd0-4078-9e91-e0fcde427a7c.jpg"
-                alt=""
-                className="w-full h-64 sm:h-72 object-cover"
-              />
-            </div>
+            <p className="mt-3 text-xs text-slate-600">
+              EU: duty cycle LoRa 10%/h, rekomendowany preset: LONG_FAST (EU_868) i hop limit 3.
+            </p>
+          </div>
+          <div className="relative">
+            {/* Smart placeholder image */}
+            <img
+              src="https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/cb0342bb-e67b-4542-b85c-46e96ea33244.jpg"
+              alt="Ilustracja sieci mesh nad miastem"
+              className="w-full h-64 md:h-80 rounded-xl object-cover ring-1 ring-slate-200"
+            />
           </div>
         </div>
       </section>
 
-      {/* Cards */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
-        <h2 className="text-xl font-semibold text-slate-900">Szybkie wejścia</h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map((c) => (
-            <NavLink
-              key={c.to}
-              to={c.to}
-              className="group rounded-lg bg-white ring-1 ring-slate-200 hover:ring-slate-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 overflow-hidden"
-            >
-              <div className="h-40">
-                <img src={c.img} className="object-cover w-full h-full" alt="" />
-              </div>
-              <div className="p-4">
-                <h3 className="text-slate-900 font-semibold">{c.title}</h3>
-                <p className="text-slate-600 text-sm mt-1">{c.desc}</p>
-              </div>
-            </NavLink>
-          ))}
-        </div>
+      {/* Entrances */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {[
+          {
+            title: 'Meshtastic',
+            to: '/meshtastic',
+            desc: 'EU_868, LONG_FAST, hop limit 3, 10% duty cycle.',
+            img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/3235aa8b-de75-4ed9-b353-58fd1802819d.jpg'
+          },
+          {
+            title: 'MeshCore',
+            to: '/meshcore',
+            desc: 'EU/UK Narrow: 869.618 MHz, BW 62.5 kHz, SF8.',
+            img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/0beec8a5-84da-4d14-999c-2f76e70d62f2.jpg'
+          },
+          {
+            title: 'Reticulum',
+            to: '/reticulum',
+            desc: 'Szyfrowane sieci suwerenne, LoRa 868 MHz.',
+            img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/8c7526eb-6245-466a-a695-db9189e671cf.jpg'
+          },
+          {
+            title: 'PMR446 i CB',
+            to: '/systems',
+            desc: 'Walkie-talkie UHF i pasmo 27 MHz.',
+            img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/66a7d768-86a4-43fc-ab1d-92eee0b3a635.jpg'
+          }
+        ].map((c) => (
+          <NavLink
+            key={c.title}
+            to={c.to}
+            className="group rounded-xl overflow-hidden bg-white border border-slate-200 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
+            aria-label={c.title}
+          >
+            <img src={c.img} className="object-cover w-full h-32" alt="" />
+            <div className="p-4">
+              <h3 className="font-semibold text-slate-900 group-hover:underline">{c.title}</h3>
+              <p className="mt-1 text-sm text-slate-700">{c.desc}</p>
+            </div>
+          </NavLink>
+        ))}
       </section>
     </div>
   )
