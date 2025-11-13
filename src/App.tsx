@@ -18,6 +18,7 @@ import PrivacyPage from './pages/Privacy'
 import CookiesPage from './pages/Cookies'
 import AccessibilityPage from './pages/Accessibility'
 import EAAPage from './pages/EAA'
+import ResourcesPage from './pages/Resources'
 import NotFoundPage from './pages/NotFound'
 
 /**
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="cb" element={<CBPage />} />
           <Route path="systems" element={<SystemsPage />} />
           <Route path="plan" element={<PlanPage />} />
+          <Route path="resources" element={<ResourcesPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="cookies" element={<CookiesPage />} />
           <Route path="accessibility" element={<AccessibilityPage />} />

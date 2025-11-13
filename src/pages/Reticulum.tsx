@@ -1,6 +1,6 @@
 /**
  * File: Reticulum.tsx
- * Purpose: Overview of Reticulum with safe JSX and accessible layout.
+ * Purpose: Overview of Reticulum with safe JSX and accessible markup. Links have proper attributes.
  */
 
 import React from 'react'
@@ -15,8 +15,8 @@ export default function ReticulumPage() {
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-900">Reticulum — suwerenne, szyfrowane sieci</h1>
         <p className="text-slate-700 mt-1">
-          Reticulum to stos sieciowy oparty na kryptografii (Curve25519, E2E) do budowy tysięcy
-          niezależnych sieci. Nie jest jedną siecią, lecz narzędziem do łączenia ludzi i społeczności.
+          Reticulum to stos sieciowy oparty na kryptografii (Curve25519, E2E) do budowy tysięcy niezależnych
+          sieci. Nie jest jedną siecią, lecz narzędziem do łączenia ludzi i społeczności.
         </p>
       </header>
 
@@ -34,7 +34,7 @@ export default function ReticulumPage() {
         <h2 id="diff" className="text-lg font-semibold text-slate-900">Sprzęt</h2>
         <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
           <li>RNode (unsigned.io), Heltec V3, RAK4631, LilyGo</li>
-          <li>Interfejsy: LoRa, Packet Radio, Wi-Fi, tunelowanie IP</li>
+          <li>Interfejsy: LoRa, Packet Radio, Wi‑Fi, tunelowanie IP</li>
         </ul>
       </section>
 
@@ -44,10 +44,10 @@ export default function ReticulumPage() {
           <li>
             Oficjalna dokumentacja:{' '}
             <a
-              className="text-[#667eea] underline"
-              href="https://reticulum.network"
+              className="text-[#667eea] underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
               target="_blank"
               rel="noopener noreferrer"
+              href="https://reticulum.network"
             >
               reticulum.network
             </a>
@@ -55,10 +55,10 @@ export default function ReticulumPage() {
           <li>
             RNode:{' '}
             <a
-              className="text-[#667eea] underline"
-              href="https://unsigned.io/rnode/"
+              className="text-[#667eea] underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
               target="_blank"
               rel="noopener noreferrer"
+              href="https://unsigned.io/rnode/"
             >
               unsigned.io/rnode
             </a>

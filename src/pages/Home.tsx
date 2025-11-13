@@ -1,16 +1,30 @@
 /**
  * File: Home.tsx
- * Purpose: Visible, welcoming home page with brand hero, clear entrances to key sections.
+ * Purpose: Home page with brand hero and a full set of section tiles (Meshtastic, MeshCore, Reticulum, PMR446, CB, Plan, Systemy, Zasoby).
+ * Images are handled via SmartImage with safe fallbacks.
  */
 
 import React from 'react'
 import { NavLink } from 'react-router'
+import SmartImage from '../components/SmartImage'
 
 /**
  * HomePage
- * Hero section + quick tiles linking to core content areas.
+ * Hero section + grid of navigational cards linking to key content areas.
  */
 export default function HomePage() {
+  /** Cards displayed on the homepage. Replace `img` paths with your files in /public/images. */
+  const cards = [
+    { title: 'Meshtastic', to: '/meshtastic', desc: 'EU_868 · LONG_FAST · hop 3 · 10% duty.', img: '/images/meshtastic.webp', kw: 'lora mesh radio' },
+    { title: 'MeshCore', to: '/meshcore', desc: 'EU/UK Narrow · 869.618 MHz · BW 62.5 kHz.', img: '/images/meshcore.webp', kw: 'lora narrowband' },
+    { title: 'Reticulum', to: '/reticulum', desc: 'Suwerenne, szyfrowane sieci LoRa.', img: '/images/reticulum.webp', kw: 'encryption network' },
+    { title: 'PMR446', to: '/pmr446', desc: 'Walkie-talkie UHF bez licencji.', img: '/images/pmr.webp', kw: 'uhf handheld radio' },
+    { title: 'CB', to: '/cb', desc: 'Pasmo 27 MHz — łączność mobilna.', img: '/images/cb.webp', kw: 'cb radio' },
+    { title: 'Plan', to: '/plan', desc: 'Koncepcja wielosystemowa i procedury.', img: '/images/plan.webp', kw: 'emergency plan' },
+    { title: 'Systemy', to: '/systems', desc: 'Dodatkowe systemy i checklist.', img: '/images/systems.webp', kw: 'systems overview' },
+    { title: 'Zasoby', to: '/resources', desc: 'Przewodniki, fora, mapy i społeczności.', img: '/images/resources.webp', kw: 'links library' }
+  ]
+
   return (
     <div className="bg-slate-50">
       {/* Hero */}
@@ -43,57 +57,39 @@ export default function HomePage() {
             </p>
           </div>
           <div className="relative">
-            {/* Smart placeholder image */}
-            <img
-              src="https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/cb0342bb-e67b-4542-b85c-46e96ea33244.jpg"
+            <SmartImage
+              src="/images/hero-mesh.webp"
               alt="Ilustracja sieci mesh nad miastem"
               className="w-full h-64 md:h-80 rounded-xl object-cover ring-1 ring-slate-200"
+              fallbackKeyword="mesh network city"
             />
           </div>
         </div>
       </section>
 
       {/* Entrances */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {[
-          {
-            title: 'Meshtastic',
-            to: '/meshtastic',
-            desc: 'EU_868, LONG_FAST, hop limit 3, 10% duty cycle.',
-            img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/3235aa8b-de75-4ed9-b353-58fd1802819d.jpg'
-          },
-          {
-            title: 'MeshCore',
-            to: '/meshcore',
-            desc: 'EU/UK Narrow: 869.618 MHz, BW 62.5 kHz, SF8.',
-            img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/0beec8a5-84da-4d14-999c-2f76e70d62f2.jpg'
-          },
-          {
-            title: 'Reticulum',
-            to: '/reticulum',
-            desc: 'Szyfrowane sieci suwerenne, LoRa 868 MHz.',
-            img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/8c7526eb-6245-466a-a695-db9189e671cf.jpg'
-          },
-          {
-            title: 'PMR446 i CB',
-            to: '/systems',
-            desc: 'Walkie-talkie UHF i pasmo 27 MHz.',
-            img: 'https://pub-cdn.sider.ai/u/U0AWH6W56YJ/web-coder/6915d9a3b5ea6df6148be35e/resource/66a7d768-86a4-43fc-ab1d-92eee0b3a635.jpg'
-          }
-        ].map((c) => (
-          <NavLink
-            key={c.title}
-            to={c.to}
-            className="group rounded-xl overflow-hidden bg-white border border-slate-200 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
-            aria-label={c.title}
-          >
-            <img src={c.img} className="object-cover w-full h-32" alt="" />
-            <div className="p-4">
-              <h3 className="font-semibold text-slate-900 group-hover:underline">{c.title}</h3>
-              <p className="mt-1 text-sm text-slate-700">{c.desc}</p>
-            </div>
-          </NavLink>
-        ))}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-12">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {cards.map((c) => (
+            <NavLink
+              key={c.title}
+              to={c.to}
+              className="group rounded-xl overflow-hidden bg-white border border-slate-200 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
+              aria-label={c.title}
+            >
+              <SmartImage
+                src={c.img}
+                alt={c.title}
+                className="object-cover w-full h-32"
+                fallbackKeyword={c.kw}
+              />
+              <div className="p-4">
+                <h3 className="font-semibold text-slate-900 group-hover:underline">{c.title}</h3>
+                <p className="mt-1 text-sm text-slate-700">{c.desc}</p>
+              </div>
+            </NavLink>
+          ))}
+        </div>
       </section>
     </div>
   )
