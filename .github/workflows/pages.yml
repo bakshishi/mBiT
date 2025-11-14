@@ -22,24 +22,47 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Setup Node without cache (cache requires a lock file and fails if it's missing)
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
+      # Install dependencies:
+      # - If lockfile exists → reproducible npm ci
+      # - Otherwise → npm install (no audit/fund to keep logs clean and faster)
       - name: Install dependencies
-        run: npm ci
+        run: |
+          if [ -f package-lock.json ]; then
+            echo "Lockfile found → using npm ci"
+            npm ci
+          else
+            echo "No lockfile → using npm install"
+            npm install --no-audit --no-fund
+          fi
 
       - name: Build (production)
         run: npm run build
 
+      # Copy static assets from public to dist so /images/* are present in the Pages artifact
       - name: Copy public to dist
         run: |
           if [ -d public ]; then
             mkdir -p dist
             cp -R public/* dist/
           fi
+
+      # Diagnostic listing to verify images and other assets are in the artifact
+      - name: List dist contents
+        run: |
+          echo "Top-level dist:"
+          ls -la dist || true
+          echo ""
+          echo "dist/images (if present):"
+          ls -la dist/images || true
+          echo ""
+          echo "Some files under dist:"
+          find dist -type f | head -n 200
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
