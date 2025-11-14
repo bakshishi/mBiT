@@ -25,7 +25,7 @@ export default function CbLinks() {
     { label: 'CB Radio — przewodnik (RadioKlucz)', href: 'https://www.radioklucz.pl/cbradio/' },
     { label: 'Kanał 19 AM/FM — poradnik (Interia/Motoryzacja)', href: 'https://motoryzacja.interia.pl/porady/news-kanal-19-am-czy-fm-jak-ustawic-cb-radio-w-samochodzie,nId,20355928' },
     { label: 'Instrukcje i tabele President (PL)', href: 'https://president.com.pl/tabela_czestotliwosci,280159,1.html' },
-    { label: 'Montaż/gałkologia — poradnik (Konektor5000)', href: 'http://blog.konektor5000.pl/index.php/poradniki/59-cb-radio/194-galkologia' },
+
     { label: 'Zasięg CB — co wpływa (Wobuzzeria)', href: 'https://wobuzzeria.pl/jaki-zasieg-ma-cb-radio-odkryj-co-wplywa-na-jego-zasieg' },
     { label: 'Mapa/Prognoza propagacji HF (SP4DKF)', href: 'https://sp4dkf.pl/mapa-propagacji/' },
     { label: 'Propagacja — PDF (CB)', href: 'https://cbradio.pl/pliki/propagacja.pdf' },

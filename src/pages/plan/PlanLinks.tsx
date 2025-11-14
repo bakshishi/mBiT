@@ -64,7 +64,7 @@ export default function PlanLinks() {
 
   const winlink: LinkEntry[] = [
     { label: 'Winlink — Oficjalna strona', href: 'https://winlink.org/' },
-    { label: 'Winlink 2000 — Polska strona Winlink (SR3WLK)', href: 'https://sr3wlk.pl/' },
+    { label: 'Winlink Express — instalacja (SR3WLK)', href: 'https://sr3wlk.pl/winlink-express/' },
   ]
 
   const power: LinkEntry[] = [
