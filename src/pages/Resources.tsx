@@ -56,8 +56,8 @@ export default function ResourcesPage() {
       title: 'Łączność kryzysowa',
       items: [
         { name: 'Diver: Łączność kryzysowa', href: 'https://diver.net.pl/lacznosc-kryzysowa', desc: 'Łączność kryzysowa' },
-        { name: 'W3C WCAG 2.1', href: 'https://www.w3.org/TR/WCAG21/', desc: 'Kryteria sukcesu poziomu AA.' },
-        { name: 'RODO/GDPR', href: 'https://gdpr.eu', desc: 'Prawa użytkowników i obowiązki administratora.' }
+        { name: 'Plan Awaryjny: Łączność kryzysowa', href: 'https://planawaryjny.com/lacznosc-awaryjna/', desc: 'Metody, za pomocą których można ze sobą rozmawiać, w przypadku awarii standardowych kanałów komunikacyjnych.' },
+        { name: 'Standard łączności dla polskich prepperów', href: 'https://domowy-survival.pl/standard-lacznosci-dla-polskich-prepperow/', desc: 'Łączność z wykorzystaniem: aplikacji Zello, PMR, CB.' }
       ]
     },
     {
