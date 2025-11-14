@@ -90,6 +90,5 @@ export default function MeshtasticPage() {
         </ul>
       </section>
     </div>
-    </div>
   )
 }
