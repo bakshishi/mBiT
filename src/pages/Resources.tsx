@@ -60,7 +60,6 @@ export default function ResourcesPage() {
         { name: 'PMR — Wikipedia', href: 'https://pl.wikipedia.org/wiki/PMR_(radio)', desc: 'Artykuł encyklopedyczny.' },
 
         // Kanały i praktyka
-        { name: 'Częstotliwości i kanały (Paweł Kosmala)', href: 'https://pawelkosmala.pl/pmr446-czestotliwosci-i-kanaly/', desc: 'Tabela kanałów i częstotliwości PMR.' },
         { name: 'PMR — przewodnik (Łączność Bydgoszcz)', href: 'https://www.lacznosc.bydgoszcz.pl/blog/krotkofalowki-pmr-446-przewodnik/', desc: 'Praktyczne wprowadzenie i dobre praktyki.' },
         { name: 'Testy łączności awaryjnej — kanały i kody', href: 'https://planawaryjny.com/pmr-kanaly-i-kody/', desc: 'Kanały testowe i kody — Plan Awaryjny.' },
         { name: 'PMRDX — praktyka i testy', href: 'https://pmrdx.pl', desc: 'Raporty zasięgu, testy i praktyka.' },
