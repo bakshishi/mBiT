@@ -81,6 +81,15 @@ export default function MeshtasticPage() {
           <li>Koordynuj zmiany presetów i uruchamianie routerów.</li>
         </ul>
       </section>
+
+      <section aria-labelledby="pl-res" className="mt-8">
+        <h2 id="pl-res" className="text-lg font-semibold text-slate-900">Polskie zasoby</h2>
+        <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
+          <li><a className="text-[#667eea] underline" target="_blank" rel="noopener noreferrer" href="https://lorastats.pl">lorastats.pl</a></li>
+          <li><a className="text-[#667eea] underline" target="_blank" rel="noopener noreferrer" href="https://diver.net.pl/meshtastic">diver.net.pl/meshtastic</a></li>
+        </ul>
+      </section>
+    </div>
     </div>
   )
 }
