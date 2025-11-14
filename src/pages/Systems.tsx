@@ -1,36 +1,86 @@
 /**
  * File: Systems.tsx
- * Purpose: Additional systems overview (Winlink, amateur radio) and maintenance checklist.
+ * Purpose: Additional systems page — assembles subsections (Winlink, amateur radio, licensing, other systems, links)
+ *          and provides an in-page table of contents with smooth scrolling that doesn't break HashRouter.
  */
 
 import React from 'react'
+import ScrollToTopButton from '../components/ScrollToTopButton'
+import SystemsWinlink from './systems/Winlink'
+import SystemsAmateurRadio from './systems/AmateurRadio'
+import SystemsLicensingPL from './systems/LicensingPL'
+import SystemsOtherSystems from './systems/OtherSystems'
+import SystemsLinks from './systems/Links'
+
+/**
+ * scrollToSection
+ * Smoothly scrolls to a target element by id without touching the router hash.
+ */
+function scrollToSection(id: string) {
+  const el = document.getElementById(id)
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 
 /**
  * SystemsPage
- * Lists additional emergency comms systems and deployment checklist.
+ * Renders the "Dodatkowe Systemy" content with a table of contents and modular sections.
  */
 export default function SystemsPage() {
+  const onAnchorClick =
+    (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault()
+      scrollToSection(id)
+    }
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-900">Dodatkowe Systemy</h1>
-        <p className="text-slate-700 mt-1">Winlink 2000, radio amatorskie oraz zagadnienia wdrożeniowe.</p>
+        <p className="text-slate-700 mt-1">
+          Winlink 2000, łączność krótkofalarska oraz inne systemy komunikacji awaryjnej. Praktyka, wdrożenia i źródła.
+        </p>
       </header>
 
-      <section aria-labelledby="winlink">
-        <h2 id="winlink" className="text-lg font-semibold text-slate-900">Winlink 2000</h2>
-        <p className="text-sm text-slate-700 mt-2">E‑mail przez radio HF/VHF/UHF, działanie bez Internetu.</p>
-      </section>
-
-      <section aria-labelledby="check" className="mt-8">
-        <h2 id="check" className="text-lg font-semibold text-slate-900">Checklist wdrożenia</h2>
-        <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-          <li>HTTPS only (SSL/TLS), kompresja gzip, caching headers.</li>
-          <li>Minifikacja CSS/JS, optymalizacja obrazów (WebP), CDN.</li>
-          <li>Audyt dostępności (WAVE, axe), testy mobilne.</li>
-          <li>Security headers: CSP, HSTS, X-Content-Type-Options.</li>
+      {/* Table of contents */}
+      <nav aria-label="Spis treści" className="mb-8">
+        <ul className="list-disc pl-5 text-sm text-slate-700 grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('winlink')}>
+              Winlink 2000
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('amatorskie')}>
+              Łączność krótkofalarska (HF/VHF/UHF, NVIS)
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('licencje')}>
+              Licencje w Polsce (UKE)
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('inne')}>
+              Inne systemy awaryjne
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('linki')}>
+              Baza linków
+            </a>
+          </li>
         </ul>
-      </section>
+      </nav>
+
+      {/* Sections */}
+      <SystemsWinlink />
+      <SystemsAmateurRadio />
+      <SystemsLicensingPL />
+      <SystemsOtherSystems />
+      <SystemsLinks />
+
+      {/* Floating to top */}
+      <ScrollToTopButton />
     </div>
   )
 }
