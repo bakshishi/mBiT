@@ -1,48 +1,64 @@
 /**
  * File: Plan.tsx
- * Purpose: Multi-system emergency plan with tiers, basic equipment, and procedures.
+ * Purpose: Page composition for the Multi‑System Emergency Plan using modular sub‑sections.
+ * Notes: Assembles content components and provides in‑page navigation (table of contents).
  */
 
 import React from 'react'
+import PlanIntro from './plan/PlanIntro'
+import PlanTiers from './plan/PlanTiers'
+import PlanEquipment from './plan/PlanEquipment'
+import PlanPower from './plan/PlanPower'
+import PlanProcedures from './plan/PlanProcedures'
+import PlanTests from './plan/PlanTests'
+import PlanMistakes from './plan/PlanMistakes'
+import PlanLinks from './plan/PlanLinks'
+import PlanSummary from './plan/PlanSummary'
+import PlanCommunity from './plan/PlanCommunity'
+import PlanGlossary from './plan/PlanGlossary'
 
 /**
  * PlanPage
- * Outlines a practical multi-tier plan, equipment list, and crisis procedures.
+ * Renders the full emergency communication plan with anchored sections and consistent formatting.
  */
 export default function PlanPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-900">Plan Awaryjny — Multi‑System</h1>
-        <p className="text-slate-700 mt-1">Koncepcja wielosystemowa (Tier 1–3), sprzęt i procedury.</p>
+        <p className="text-slate-700 mt-1">
+          Praktyczny plan łączności awaryjnej: poziomy (Tier 1–3), sprzęt, zasilanie, procedury, testy i checklisty.
+        </p>
       </header>
 
-      <section aria-labelledby="tiers">
-        <h2 id="tiers" className="text-lg font-semibold text-slate-900">Tier 1–3</h2>
-        <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-          <li>Tier 1: PMR446 i Meshtastic handheld (0–5 km).</li>
-          <li>Tier 2: CB/PMR i nody mesh z repeaterami (5–30 km).</li>
-          <li>Tier 3: Meshtastic DX, wysokie repetery, (globalnie: Winlink/ham).</li>
+      {/* Table of contents for quick navigation */}
+      <nav aria-label="Spis treści" className="mb-8">
+        <ul className="list-disc pl-5 text-sm text-slate-700 grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+          <li><a className="text-indigo-700 hover:underline" href="#wprowadzenie">Wprowadzenie</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#tiers">System wielopoziomowy (Tier 1–3)</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#sprzet">Sprzęt podstawowy</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#zasilanie">Zasilanie awaryjne</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#procedury">Procedury</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#testy">Testy łączności</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#bledy">Najczęstsze błędy</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#linki">Baza linków</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#checklisty">Checklisty</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#spolecznosc">Kontakt i społeczność</a></li>
+          <li><a className="text-indigo-700 hover:underline" href="#slowniczek">Słowniczek</a></li>
         </ul>
-      </section>
+      </nav>
 
-      <section aria-labelledby="gear" className="mt-8">
-        <h2 id="gear" className="text-lg font-semibold text-slate-900">Sprzęt podstawowy</h2>
-        <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-          <li>2× PMR446, 1× node Meshtastic, zasilanie awaryjne, anteny.</li>
-          <li>Powerbank/akumulatory, panel solarny, kable zapasowe.</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="proc" className="mt-8">
-        <h2 id="proc" className="text-lg font-semibold text-slate-900">Procedury</h2>
-        <ol className="mt-2 list-decimal pl-5 text-sm text-slate-700">
-          <li>Sprawdź łączność lokalną (PMR).</li>
-          <li>Aktywuj mesh (Meshtastic), nawiąż łączność z repeaterami.</li>
-          <li>W razie potrzeby użyj CB dla większego zasięgu.</li>
-          <li>Dokumentuj wszystkie kontakty i zdarzenia.</li>
-        </ol>
-      </section>
+      <PlanIntro />
+      <PlanTiers />
+      <PlanEquipment />
+      <PlanPower />
+      <PlanProcedures />
+      <PlanTests />
+      <PlanMistakes />
+      <PlanLinks />
+      <PlanSummary />
+      <PlanCommunity />
+      <PlanGlossary />
     </div>
   )
 }
