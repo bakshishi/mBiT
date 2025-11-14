@@ -17,7 +17,7 @@ export default function AccessibilityPage() {
       </header>
 
       <section aria-labelledby="cfg">
-        <h2 id="cfg" className="text-lg font-semibold text-slate-900"></h2>Deklaracja dostępności</h2>
+        <h2 id="cfg" className="text-lg font-semibold text-slate-900">Deklaracja dostępności</h2>
     <p>
       Projekt mBit.pm zobowiązuje się zapewnić dostępność strony zgodnie z wytycznymi WCAG 2.1 na poziomie AA. Strona jest w pełni responsywna, czytelna na wszystkich urządzeniach i dostępna dla osób z niepełnosprawnościami.
     </p>
