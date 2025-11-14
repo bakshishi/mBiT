@@ -30,7 +30,7 @@ export default function Header() {
     { to: '/pmr446', label: 'PMR446' },
     { to: '/cb', label: 'CB Radio' },
     { to: '/plan', label: 'Plan Awaryjny' },
-    { to: '/systems', label: 'Systemy' },
+    { to: '/systems', label: 'Systemy Dodatkowe' },
   ]
 
   const linkBase =
