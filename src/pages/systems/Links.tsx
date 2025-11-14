@@ -41,8 +41,8 @@ function LinkGroup({ title, items }: { title: string; items: LinkItem[] }) {
  */
 export default function SystemsLinks() {
   const winlink: LinkItem[] = [
-    { label: 'Winlink — oficjalna strona (EN)', href: 'https://winlink.org/' },
-    { label: 'SR3WLK: Co to jest Winlink?', href: 'https://sr3wlk.pl/co-to-jest-winlink/' },
+    { label: 'Winlink — oficjalna strona', href: 'https://winlink.org/' },
+    { label: 'SR3WLK — co to jest Winlink?', href: 'https://sr3wlk.pl/co-to-jest-winlink/' },
     { label: 'SR3WLK: Winlink — instalacja', href: 'https://sr3wlk.pl/instalowanie-oprogramowania/' },
   ]
 
