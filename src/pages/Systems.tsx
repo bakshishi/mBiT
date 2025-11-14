@@ -35,7 +35,7 @@ export default function SystemsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       <header className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">Dodatkowe Systemy</h1>
+        <h1 className="text-2xl font-bold text-slate-900">Systemy Dodatkowe</h1>
         <p className="text-slate-700 mt-1">
           Winlink 2000, łączność krótkofalarska oraz inne systemy komunikacji awaryjnej. Praktyka, wdrożenia i źródła.
         </p>
