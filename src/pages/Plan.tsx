@@ -16,6 +16,7 @@ import PlanLinks from './plan/PlanLinks'
 import PlanSummary from './plan/PlanSummary'
 import PlanCommunity from './plan/PlanCommunity'
 import PlanGlossary from './plan/PlanGlossary'
+import ScrollToTopButton from '../components/ScrollToTopButton'
 
 /**
  * scrollToSection
@@ -124,6 +125,9 @@ export default function PlanPage() {
       <PlanSummary />
       <PlanCommunity />
       <PlanGlossary />
+
+      {/* Floating action: scroll back to top */}
+      <ScrollToTopButton />
     </div>
   )
 }
