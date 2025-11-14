@@ -8,6 +8,7 @@ import CopyField from '../components/CopyField'
 import PageHeader from '../components/PageHeader'
 import PageToc from '../components/PageToc'
 import Section from '../components/Section'
+import ScrollToTopButton from '../components/ScrollToTopButton'
 
 /**
  * MeshtasticPage
@@ -151,6 +152,9 @@ export default function MeshtasticPage() {
           </ul>
         </Section>
       </div>
+
+      {/* Floating action button to quickly return to top */}
+      <ScrollToTopButton threshold={300} />
     </div>
   )
 }

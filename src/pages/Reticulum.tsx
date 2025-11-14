@@ -7,6 +7,7 @@ import React from 'react'
 import PageHeader from '../components/PageHeader'
 import PageToc from '../components/PageToc'
 import Section from '../components/Section'
+import ScrollToTopButton from '../components/ScrollToTopButton'
 
 /**
  * ReticulumPage
@@ -105,6 +106,9 @@ export default function ReticulumPage() {
           </ul>
         </Section>
       </div>
+
+      {/* Floating action button to quickly return to top */}
+      <ScrollToTopButton threshold={300} />
     </div>
   )
 }
