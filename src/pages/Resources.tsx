@@ -26,15 +26,14 @@ export default function ResourcesPage() {
       items: [
         { name: 'Oficjalna dokumentacja', href: 'https://meshtastic.org/docs/introduction/', desc: 'Przewodnik startowy, konfiguracja, presety.' },
         { name: 'Blog: LongFast vs MediumFast', href: 'https://meshtastic.org/blog/why-your-mesh-should-switch-from-longfast/', desc: 'Analiza wydajności i rekomendacje.' },
-        { name: 'Grupy lokalne', href: 'https://meshtastic.org/pl-PL/docs/community/local-groups/', desc: 'Mapa społeczności i kanałów komunikacji.' },
-        { name: 'Diver: Poradniki', href: 'https://diver.net.pl/meshtastic', desc: 'Czy Meshtastic jest fantastic?' }
+        { name: 'Grupy lokalne', href: 'https://meshtastic.org/pl-PL/docs/community/local-groups/', desc: 'Mapa społeczności i kanałów komunikacji.' }
       ]
     },
     {
       title: 'MeshCore',
       items: [
         { name: 'Portal PL', href: 'https://lorameshcore.pl', desc: 'Polskie materiały, aktualne presety EU/UK Narrow.' },
-        { name: 'Diver: Poradniki', href: 'https://diver.net.pl/meshcore', desc: 'MeshCore czy Meshtastic?' }
+        { name: 'Diver: przewodniki', href: 'https://diver.net.pl/meshcore', desc: 'Instrukcje i dobre praktyki wdrożeń.' }
       ]
     },
     {
@@ -53,11 +52,11 @@ export default function ResourcesPage() {
       ]
     },
     {
-      title: 'Łączność kryzysowa',
+      title: 'Dostępność i RODO',
       items: [
-        { name: 'Diver: Łączność kryzysowa', href: 'https://diver.net.pl/lacznosc-kryzysowa', desc: 'Łączność kryzysowa' },
-        { name: 'Plan Awaryjny: Łączność kryzysowa', href: 'https://planawaryjny.com/lacznosc-awaryjna/', desc: 'Metody, za pomocą których można ze sobą rozmawiać, w przypadku awarii standardowych kanałów komunikacyjnych.' },
-        { name: 'Standard łączności dla polskich prepperów', href: 'https://domowy-survival.pl/standard-lacznosci-dla-polskich-prepperow/', desc: 'Łączność z wykorzystaniem: aplikacji Zello, PMR, CB.' }
+        { name: 'European Accessibility Act', href: 'https://digital-strategy.ec.europa.eu/en/policies/european-accessibility-act', desc: 'Wymogi EAA i EN 301 549.' },
+        { name: 'W3C WCAG 2.1', href: 'https://www.w3.org/TR/WCAG21/', desc: 'Kryteria sukcesu poziomu AA.' },
+        { name: 'RODO/GDPR', href: 'https://gdpr.eu', desc: 'Prawa użytkowników i obowiązki administratora.' }
       ]
     },
     {

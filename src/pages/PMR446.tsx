@@ -1,7 +1,6 @@
 /**
  * File: PMR446.tsx
- * Purpose: Comprehensive PMR446 page with modular sections, in-page Table of Contents with smooth scrolling,
- *          and accessible, high-contrast content. Avoids HashRouter hash changes.
+ * Purpose: Comprehensive PMR446 page with modular sections, unified ToC via PageToc, and accessible, high-contrast content.
  */
 
 import React from 'react'
@@ -13,26 +12,23 @@ import PMREtiquette from './pmr/Etiquette'
 import PMRHowTo from './pmr/HowTo'
 import PMRGlossary from './pmr/Glossary'
 import PMRLinks from './pmr/Links'
-
-/**
- * scrollToSection
- * Smoothly scrolls to an element by id without altering the router hash.
- */
-function scrollToSection(id: string) {
-  const el = document.getElementById(id)
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
+import PageToc, { TocItem } from '../components/PageToc'
 
 /**
  * PMRPage
- * Renders the PMR446 guide with ToC and sections. Uses programmatic scrolling to prevent 404 in HashRouter.
+ * Renders the PMR446 guide with unified PageToc and sections. No hash changes (HashRouter-safe).
  */
 export default function PMRPage() {
-  const onAnchorClick =
-    (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault()
-      scrollToSection(id)
-    }
+  /** ToC items matching section anchors defined within subcomponents */
+  const toc: TocItem[] = [
+    { id: 'wprowadzenie', label: 'Wprowadzenie' },
+    { id: 'prawo', label: 'Prawo w PL/EU' },
+    { id: 'kanaly', label: 'Kanały i tony' },
+    { id: 'etykieta', label: 'Etykieta' },
+    { id: 'jak-zaczac', label: 'Jak zacząć' },
+    { id: 'slowniczek', label: 'Słowniczek' },
+    { id: 'linki', label: 'Baza linków' },
+  ]
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
@@ -44,20 +40,10 @@ export default function PMRPage() {
         </p>
       </header>
 
-      {/* Table of contents */}
-      <nav aria-label="Spis treści" className="mb-8">
-        <ul className="list-disc pl-5 text-sm text-slate-700 grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-          <li><a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('wprowadzenie')}>Wprowadzenie</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('prawo')}>Prawo w PL/EU</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('kanaly')}>Kanały i tony</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('etykieta')}>Etykieta</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('jak-zaczac')}>Jak zacząć</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('slowniczek')}>Słowniczek</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('linki')}>Baza linków</a></li>
-        </ul>
-      </nav>
+      {/* Unified ToC */}
+      <PageToc items={toc} />
 
-      {/* Sections */}
+      {/* Sections (IDs are defined inside the subcomponents) */}
       <PMRIntro />
       <PMRLegal />
       <PMRChannels />

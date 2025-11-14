@@ -1,6 +1,6 @@
 /**
  * File: src/pages/CB.tsx
- * Purpose: Comprehensive CB Radio page composed from small reusable sections with ToC and accessible layout.
+ * Purpose: Comprehensive CB Radio page composed from small reusable sections with unified ToC and accessible layout.
  */
 
 import React from 'react'
@@ -14,22 +14,14 @@ import CbModulation from './cb/Modulation'
 import CbPropagation from './cb/Propagation'
 import CbMistakes from './cb/Mistakes'
 import CbLinks from './cb/Links'
-
-/**
- * scrollToSection
- * Smoothly scrolls to the section with given anchor id.
- */
-function scrollToSection(id: string) {
-  const el = document.getElementById(id)
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
+import PageToc, { TocItem } from '../components/PageToc'
 
 /**
  * CBPage
- * Assembles all CB sections and renders a local table of contents.
+ * Assembles all CB sections and renders a unified local table of contents.
  */
 export default function CBPage() {
-  const toc = [
+  const toc: TocItem[] = [
     { id: 'intro', label: 'Wprowadzenie' },
     { id: 'legal', label: 'Prawo w PL' },
     { id: 'channels', label: 'Kanały' },
@@ -51,27 +43,10 @@ export default function CBPage() {
         </p>
       </header>
 
-      {/* ToC */}
-      <nav aria-label="Spis treści" className="mb-8">
-        <ul className="list-disc pl-5 text-sm text-slate-700 grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-          {toc.map((item) => (
-            <li key={item.id}>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection(item.id)
-                }}
-                className="text-indigo-700 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-sm"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {/* Unified ToC */}
+      <PageToc items={toc} />
 
-      {/* Sections */}
+      {/* Sections with stable anchors */}
       <section id="intro" aria-labelledby="cb-intro">
         <h2 id="cb-intro" className="sr-only">Wprowadzenie</h2>
         <CbIntro />
