@@ -19,10 +19,10 @@ export default function HomePage() {
     { title: 'MeshCore', to: '/meshcore', desc: 'EU/UK Narrow · 869.618 MHz · BW 62.5 kHz.', img: 'images/meshcore.webp', kw: 'lora narrowband' },
     { title: 'Reticulum', to: '/reticulum', desc: 'Suwerenne, szyfrowane sieci LoRa.', img: 'images/reticulum.webp', kw: 'encryption network' },
     { title: 'PMR446', to: '/pmr446', desc: 'Walkie-talkie UHF bez licencji.', img: 'images/pmr.webp', kw: 'uhf handheld radio' },
-    { title: 'CB', to: '/cb', desc: 'Pasmo 27 MHz — łączność mobilna.', img: 'images/cb.webp', kw: 'cb radio' },
-    { title: 'Plan', to: '/plan', desc: 'Koncepcja wielosystemowa i procedury.', img: 'images/plan.webp', kw: 'emergency plan' },
-    { title: 'Systemy', to: '/systems', desc: 'Dodatkowe systemy i checklist.', img: 'images/systems.webp', kw: 'systems overview' },
-    { title: 'Zasoby', to: '/resources', desc: 'Przewodniki, fora, mapy i społeczności.', img: 'images/resources.webp', kw: 'links library' },
+    { title: 'CB Radio', to: '/cb', desc: 'Pasmo 27 MHz — łączność mobilna.', img: 'images/cb.webp', kw: 'cb radio' },
+    { title: 'Pla Awaryjny', to: '/plan', desc: 'Koncepcja wielosystemowa i procedury.', img: 'images/plan.webp', kw: 'emergency plan' },
+    { title: 'Systemy Dodatkowe', to: '/systems', desc: 'Dodatkowe systemy i checklist.', img: 'images/systems.webp', kw: 'systems overview' },
+    { title: 'Zasoby Internetowe', to: '/resources', desc: 'Przewodniki, fora, mapy i społeczności.', img: 'images/resources.webp', kw: 'links library' },
     { title: 'Testy łączności', to: '/tests', desc: 'Terminy, kanały PMR/CB i ham.', img: 'images/tests.webp', kw: 'radio test schedule' }
   ]
 
