@@ -18,10 +18,31 @@ import PlanCommunity from './plan/PlanCommunity'
 import PlanGlossary from './plan/PlanGlossary'
 
 /**
+ * scrollToSection
+ * Smoothly scrolls to the element with the given id without changing the router hash path.
+ */
+function scrollToSection(id: string) {
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Optionally keep URL stable (no extra # fragment that would break HashRouter).
+    // If you want shareable fragments later, we can sync a ?section= param instead.
+  }
+}
+
+/**
  * PlanPage
  * Renders the full emergency communication plan with anchored sections and consistent formatting.
+ * The table of contents uses JS-based smooth scroll to avoid breaking HashRouter (#/plan) path.
  */
 export default function PlanPage() {
+  // Factory to attach onClick to ToC links
+  const onAnchorClick =
+    (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault()
+      scrollToSection(id)
+    }
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       <header className="mb-6">
@@ -34,17 +55,61 @@ export default function PlanPage() {
       {/* Table of contents for quick navigation */}
       <nav aria-label="Spis treści" className="mb-8">
         <ul className="list-disc pl-5 text-sm text-slate-700 grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-          <li><a className="text-indigo-700 hover:underline" href="#wprowadzenie">Wprowadzenie</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#tiers">System wielopoziomowy (Tier 1–3)</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#sprzet">Sprzęt podstawowy</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#zasilanie">Zasilanie awaryjne</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#procedury">Procedury</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#testy">Testy łączności</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#bledy">Najczęstsze błędy</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#linki">Baza linków</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#checklisty">Checklisty</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#spolecznosc">Kontakt i społeczność</a></li>
-          <li><a className="text-indigo-700 hover:underline" href="#slowniczek">Słowniczek</a></li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('wprowadzenie')}>
+              Wprowadzenie
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('tiers')}>
+              System wielopoziomowy (Tier 1–3)
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('sprzet')}>
+              Sprzęt podstawowy
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('zasilanie')}>
+              Zasilanie awaryjne
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('procedury')}>
+              Procedury
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('testy')}>
+              Testy łączności
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('bledy')}>
+              Najczęstsze błędy
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('linki')}>
+              Baza linków
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('checklisty')}>
+              Checklisty
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('spolecznosc')}>
+              Kontakt i społeczność
+            </a>
+          </li>
+          <li>
+            <a className="text-indigo-700 hover:underline" href="#" onClick={onAnchorClick('slowniczek')}>
+              Słowniczek
+            </a>
+          </li>
         </ul>
       </nav>
 
