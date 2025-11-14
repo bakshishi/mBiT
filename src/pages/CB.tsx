@@ -1,35 +1,120 @@
 /**
- * File: CB.tsx
- * Purpose: CB Radio overview for CEPT plan with channels and HF propagation basics.
+ * File: src/pages/CB.tsx
+ * Purpose: Comprehensive CB Radio page composed from small reusable sections with ToC and accessible layout.
  */
 
 import React from 'react'
+import ScrollToTopButton from '../components/ScrollToTopButton'
+import CbIntro from './cb/Intro'
+import CbLegal from './cb/Legal'
+import CbChannels from './cb/Channels'
+import CbHowTo from './cb/HowTo'
+import CbEtiquette from './cb/Etiquette'
+import CbModulation from './cb/Modulation'
+import CbPropagation from './cb/Propagation'
+import CbMistakes from './cb/Mistakes'
+import CbLinks from './cb/Links'
+
+/**
+ * scrollToSection
+ * Smoothly scrolls to the section with given anchor id.
+ */
+function scrollToSection(id: string) {
+  const el = document.getElementById(id)
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 
 /**
  * CBPage
- * Presents CB radio essentials for the CEPT plan and operational etiquette.
+ * Assembles all CB sections and renders a local table of contents.
  */
 export default function CBPage() {
+  const toc = [
+    { id: 'intro', label: 'Wprowadzenie' },
+    { id: 'legal', label: 'Prawo w PL' },
+    { id: 'channels', label: 'Kanały' },
+    { id: 'howto', label: 'Jak zacząć' },
+    { id: 'etiquette', label: 'Etykieta' },
+    { id: 'modulation', label: 'Modulacje' },
+    { id: 'propagation', label: 'Propagacja' },
+    { id: 'mistakes', label: 'Najczęstsze błędy' },
+    { id: 'links', label: 'Baza linków' },
+  ] as const
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">CB Radio — 27 MHz</h1>
-        <p className="text-slate-700 mt-1">40 kanałów (CEPT), tryby AM/FM/SSB, moc 1–4 W.</p>
-      </header>
-      <section aria-labelledby="channels">
-        <h2 id="channels" className="text-lg font-semibold text-slate-900">Kanały</h2>
-        <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-          <li>Kanał 9: 27.065 MHz (Emergency)</li>
-          <li>Kanał 19: 27.185 MHz (Trucker&apos;s)</li>
-          <li>Kanał 20: 27.205 MHz (Ogólny)</li>
-        </ul>
-      </section>
-      <section aria-labelledby="hf" className="mt-8">
-        <h2 id="hf" className="text-lg font-semibold text-slate-900">Propagacja HF</h2>
-        <p className="text-sm text-slate-700">
-          Warunki zależą od pory dnia i sezonu; występuje propagacja E/F. Możliwy zasięg lokalny po globalny.
+      <header className="mb-8">
+        <h1 className="text-3xl font-bold text-slate-900">CB Radio — poradnik dla początkujących</h1>
+        <p className="mt-2 text-slate-700 max-w-3xl">
+          Pasmo obywatelskie 27 MHz bez licencji. 40 kanałów (CEPT), AM/FM oraz SSB (do 12 W PEP).
+          Prosta obsługa, niski koszt wejścia i realne zastosowania w codziennej i awaryjnej łączności.
         </p>
+      </header>
+
+      {/* ToC */}
+      <nav aria-label="Spis treści" className="mb-8">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+          {toc.map(item => (
+            <li key={item.id}>
+              <button
+                type="button"
+                onClick={() => scrollToSection(item.id)}
+                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Sections */}
+      <section id="intro" aria-labelledby="cb-intro">
+        <h2 id="cb-intro" className="sr-only">Wprowadzenie</h2>
+        <CbIntro />
       </section>
+
+      <section id="legal" aria-labelledby="cb-legal" className="mt-10">
+        <h2 id="cb-legal" className="sr-only">Prawo w Polsce</h2>
+        <CbLegal />
+      </section>
+
+      <section id="channels" aria-labelledby="cb-channels" className="mt-10">
+        <h2 id="cb-channels" className="sr-only">Kanały i przeznaczenia</h2>
+        <CbChannels />
+      </section>
+
+      <section id="howto" aria-labelledby="cb-howto" className="mt-10">
+        <h2 id="cb-howto" className="sr-only">Jak zacząć</h2>
+        <CbHowTo />
+      </section>
+
+      <section id="etiquette" aria-labelledby="cb-etiquette" className="mt-10">
+        <h2 id="cb-etiquette" className="sr-only">Etykieta</h2>
+        <CbEtiquette />
+      </section>
+
+      <section id="modulation" aria-labelledby="cb-mod" className="mt-10">
+        <h2 id="cb-mod" className="sr-only">Modulacje</h2>
+        <CbModulation />
+      </section>
+
+      <section id="propagation" aria-labelledby="cb-prop" className="mt-10">
+        <h2 id="cb-prop" className="sr-only">Propagacja</h2>
+        <CbPropagation />
+      </section>
+
+      <section id="mistakes" aria-labelledby="cb-mistakes" className="mt-10">
+        <h2 id="cb-mistakes" className="sr-only">Najczęstsze błędy</h2>
+        <CbMistakes />
+      </section>
+
+      <section id="links" aria-labelledby="cb-links" className="mt-10">
+        <h2 id="cb-links" className="sr-only">Baza linków</h2>
+        <CbLinks />
+      </section>
+
+      <ScrollToTopButton />
     </div>
   )
 }
