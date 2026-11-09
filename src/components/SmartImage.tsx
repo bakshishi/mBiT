@@ -1,25 +1,42 @@
 /**
  * File: SmartImage.tsx
- * Purpose: Resilient image component that falls back to a lightweight placeholder when the primary src is unavailable.
+ * Purpose: Resilient image component that falls back to a lightweight local placeholder when the primary src is unavailable.
  * Notes: On GitHub Pages (repo site), absolute paths like "/images/..." break due to base path.
  *        This component sanitizes leading slashes to keep image URLs relative to the current site root.
+ *        The fallback is an inline SVG (data URI) — no third-party requests are made.
  */
 
 import React from 'react'
 
+/** Local placeholder (brand gradient + mesh waves) used when an image cannot be loaded. */
+const PLACEHOLDER_SRC =
+  'data:image/svg+xml;utf8,' +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice">' +
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0" stop-color="#667eea"/><stop offset="1" stop-color="#764ba2"/>' +
+      '</linearGradient></defs>' +
+      '<rect width="640" height="360" fill="url(#g)" opacity="0.18"/>' +
+      '<g fill="none" stroke="#667eea" stroke-width="3" stroke-linecap="round" opacity="0.6">' +
+      '<path d="M250 150c24 0 40 16 70 16s46-16 70-16"/>' +
+      '<path d="M250 190c24 0 40 16 70 16s46-16 70-16"/>' +
+      '</g><circle cx="320" cy="236" r="9" fill="#667eea" opacity="0.7"/></svg>'
+  )
+
 /**
  * SmartImage
- * Renders an image with graceful fallback to sider.ai/autoimage using a short English keyword.
+ * Renders an image with graceful fallback to a local SVG placeholder.
  * Also normalizes local paths by stripping a leading slash ("/images/foo.webp" -> "images/foo.webp").
+ * `fallbackKeyword` is kept for backward compatibility and is ignored.
  */
 export default function SmartImage(props: {
   src?: string
   alt: string
   className?: string
-  fallbackKeyword: string
+  fallbackKeyword?: string
 }) {
-  const { src, alt, className, fallbackKeyword } = props
-  const fallback = `https://sider.ai/autoimage/${encodeURIComponent(fallbackKeyword)}`
+  const { src, alt, className } = props
+  const fallback = PLACEHOLDER_SRC
 
   /**
    * Normalize provided src:
@@ -41,7 +58,7 @@ export default function SmartImage(props: {
     setCurrentSrc(normalizeSrc(src) || fallback)
   }, [src, fallback, normalizeSrc])
 
-  /** Handle image load errors by switching to a placeholder URL. */
+  /** Handle image load errors by switching to the local placeholder. */
   const handleError = React.useCallback(() => {
     if (currentSrc !== fallback) {
       setCurrentSrc(fallback)

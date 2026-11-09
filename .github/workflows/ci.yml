@@ -1,0 +1,70 @@
+name: CI
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Z lockfile → powtarzalne `npm ci`, bez lockfile → `npm install`
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install --no-audit --no-fund
+          fi
+
+      - name: Build (production)
+        run: npm run build
+
+      - name: Sprawdź zawartość dist
+        run: |
+          test -f dist/index.html
+          test -f dist/main.js
+          test -f dist/main.css
+          test -d dist/images
+          if grep -q "/esbuild" dist/main.js; then echo "Live reload trafił do buildu produkcyjnego"; exit 1; fi
+          find dist -type f | head -n 100
+
+  # Informacyjny: wynik nie blokuje PR, dopóki ewentualne błędy typów nie zostaną naprawione.
+  typecheck:
+    name: Typecheck (informacyjny)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install --no-audit --no-fund
+          fi
+
+      - name: tsc --noEmit
+        run: npm run typecheck
