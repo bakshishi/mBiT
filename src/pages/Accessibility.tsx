@@ -16,19 +16,19 @@ export default function AccessibilityPage() {
   return (
     <PageContainer
       title="Deklaracja Dostępności (WCAG 2.1 AA)"
-      intro="Serwis mBiT.pm dąży do pełnej zgodności z WCAG 2.1 AA oraz EN 301 549."
+      intro="Serwis mBiT.pm dąży do zgodności z WCAG 2.1 AA. To dobrowolna deklaracja społeczności; nie wszystkie elementy muszą jeszcze spełniać wymagania."
     >
       <Section id="features" title="Kluczowe funkcje dostępności">
         <ul className="list-disc pl-6 space-y-2">
           <li>Semantyczny HTML5, nawigacja klawiaturą, widoczny focus, alternative text dla obrazów.</li>
           <li>Skip link do treści głównej, ARIA labels dla elementów interaktywnych.</li>
-          <li>Kontrast co najmniej 4.5:1 w stanach normalnych, zgodny z WCAG AA.</li>
+          <li>Kontrast tekstu dobieramy tak, by wynosił co najmniej 4.5:1; zgłoszone przypadki niższego kontrastu poprawiamy.</li>
         </ul>
       </Section>
 
       <Section id="testing" title="Testy i weryfikacja">
         <p>
-          Dostępność weryfikujemy za pomocą narzędzi WAVE, axe DevTools oraz testów manualnych (klawiatura, czytniki ekranu, urządzenia mobilne).
+          Dostępność sprawdzamy na bieżąco (m.in. obsługa klawiaturą i kontrast), ale nie przeprowadziliśmy pełnego audytu zewnętrznego.
         </p>
       </Section>
 

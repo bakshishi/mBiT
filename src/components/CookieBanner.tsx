@@ -39,8 +39,8 @@ export default function CookieBanner() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm">
-          Używamy wyłącznie niezbędnych cookies do działania strony. Możesz zaakceptować lub
-          odrzucić cookies nieniezbędne. Szczegóły w{' '}
+          Serwis nie używa cookies śledzących ani analityki; zapamiętujemy tylko Twój wybór w pamięci
+          przeglądarki. Szczegóły w{' '}
           <a className="underline" href="#/cookies">
             Polityce Cookies
           </a>
@@ -55,7 +55,7 @@ export default function CookieBanner() {
           </button>
           <button
             onClick={accept}
-            className="px-3 py-2 text-sm rounded bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white font-medium hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="px-3 py-2 text-sm rounded bg-gradient-to-r from-[#5a67d8] to-[#764ba2] text-white font-medium hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             Akceptuj
           </button>

@@ -15,7 +15,7 @@ export default function CbLegal() {
       <h3 className="text-xl font-semibold text-slate-900">Prawo i ograniczenia (Polska/EU)</h3>
       <ul className="mt-2 space-y-2 text-slate-700">
         <li>
-          Pasmo: 26.960–27.410 MHz (40 kanałów co 10 kHz; plan CEPT). Legalność bez zezwoleń pod
+          Pasmo: ok. 26.965–27.405 MHz (40 kanałów, odstęp 10 kHz, z przerwami 20 kHz między niektórymi kanałami, np. po 3, 7, 11, 15 i 19). Legalność bez zezwoleń pod
           warunkiem zgodności urządzenia z normami (np. ETSI EN 300 135/433) i posiadania deklaracji
           zgodności producenta.
         </li>

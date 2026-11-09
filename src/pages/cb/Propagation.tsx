@@ -15,13 +15,22 @@ export default function CbPropagation() {
       <h3 className="text-xl font-semibold text-slate-900">Propagacja HF w paśmie 27 MHz</h3>
       <ul className="mt-2 list-disc pl-6 text-slate-700 space-y-2">
         <li>
-          Dzień: warstwa D silnie tłumi — łączności głównie lokalne (fala przyziemna, krótkie odbicia E).
+          Na co dzień: łączności lokalne — fala przyziemna i linia widzenia, zwykle kilka–kilkanaście kilometrów.
         </li>
         <li>
-          Noc: lepsze warunki na odbicia od warstwy F — możliwe łączności dalekie (DX).
+          Dzień przy wysokiej aktywności Słońca (okolice maksimum cyklu): jonosfera (warstwa F2) odbija fale
+          27 MHz, co daje łączności dalekie (DX), także międzykontynentalne. W minimum cyklu pasmo bywa
+          „martwe” przez całe tygodnie.
         </li>
         <li>
-          Sporadic E (lato): nagłe „otwarcia” pozwalające na łączności 1000–2000 km w krótkich oknach.
+          Noc: pasmo zwykle się zamyka i zostają łączności lokalne. Wyjątkiem są krótkie otwarcia
+          Sporadic E (głównie latem, także wieczorami).
+        </li>
+        <li>
+          Sporadic E (głównie lato): nagłe „otwarcia” pozwalające na łączności ok. 1000–2000 km w krótkich oknach.
+        </li>
+        <li>
+          Pochłanianie w warstwie D dotyczy głównie niższych pasm KF; na 27 MHz jest znacznie mniejsze.
         </li>
         <li>
           Zasięg zależy od anteny, terenu, pogody oraz aktywności słonecznej. Dobra antena często daje większy efekt

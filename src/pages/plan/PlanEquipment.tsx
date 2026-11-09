@@ -20,7 +20,7 @@ export default function PlanEquipment() {
           <li>2× radiotelefony PMR446 (np. Motorola, Midland; modele zgodne z prawem).</li>
           <li>1× node Meshtastic (np. LILYGO T‑Beam, T‑Echo).</li>
           <li>Zasilanie awaryjne: powerbank 10 000–20 000 mAh, zapasowe akumulatory.</li>
-          <li>Panel solarny przenośny (50–120 W) — opcjonalnie.</li>
+          <li>Panel solarny przenośny (50–200 W) — opcjonalnie.</li>
           <li>Anteny i kable zapasowe (USB, zasilające, ewentualnie antenowe).</li>
         </ul>
       </div>

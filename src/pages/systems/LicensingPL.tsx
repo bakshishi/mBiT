@@ -18,16 +18,16 @@ export default function SystemsLicensingPL() {
           <h3 className="text-sm font-medium text-slate-900">Jak uzyskać uprawnienia</h3>
           <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
             <li>Rejestracja na egzamin: portal UKE — egzaminy.uke.gov.pl.</li>
-            <li>Po zdaniu: otrzymujesz zaświadczenie (bez dawnego “świadectwa operatora”).</li>
-            <li>Wniosek o pozwolenie RA‑i przez PUE UKE (pue.uke.gov.pl), opłata skarbowa.</li>
+            <li>Po zdaniu: otrzymujesz zaświadczenie o zdaniu egzaminu (od 12.11.2024 zamiast dawnego świadectwa operatora; wcześniejsze świadectwa zachowują ważność).</li>
+            <li>Wniosek o pozwolenie radiowe przez PUE UKE (pue.uke.gov.pl) z zaświadczeniem i dowodem opłaty skarbowej (82 zł); UKE ma do 6 tygodni na wydanie pozwolenia. Do czasu otrzymania pozwolenia i znaku wywoławczego nie wolno nadawać.</li>
           </ul>
         </div>
         <div className="rounded-lg border border-slate-200 p-4">
           <h3 className="text-sm font-medium text-slate-900">Struktura egzaminu</h3>
           <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-            <li>Część pisemna: 20 pytań (po 5 z: elektrotechnika/radiotechnika, obsługa, BHP, przepisy).</li>
-            <li>Część ustna: alfabet fonetyczny, kody Q, raportowanie, krótka łączność próbna.</li>
-            <li>Bazy pytań i trening: egzaminkf.pl, test.sp6dlv.pl.</li>
+            <li>Test pisemny: 4 przedmioty (technika i radioelektronika, bezpieczeństwo pracy, procedury operatorskie, przepisy), po 8 pytań z 3 odpowiedziami; do zaliczenia min. 6/8 z każdego przedmiotu.</li>
+            <li>Brak części ustnej w opisanym formacie (zasady stosowane od 1.05.2026 wg egzaminkf.pl).</li>
+            <li>Bazy pytań i trening: egzaminkf.pl, test.sp6dlv.pl. Aktualne zasady zawsze sprawdź w UKE.</li>
           </ul>
         </div>
       </div>

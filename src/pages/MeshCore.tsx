@@ -60,7 +60,7 @@ export default function MeshCorePage() {
           </ul>
         </Section>
 
-        <Section id="config" title="Konfiguracja EU/UK Narrow (PL 2025)">
+        <Section id="config" title="Konfiguracja EU/UK Narrow">
           <ul className="list-disc pl-5">
             <li>Frequency: 869.618 MHz</li>
             <li>Bandwidth: 62.5 kHz</li>
@@ -71,7 +71,7 @@ export default function MeshCorePage() {
 
         <Section id="diff" title="Różnice vs Meshtastic">
           <ul className="list-disc pl-5">
-            <li>Direct‑path (MeshCore) zamiast flood‑based (Meshtastic).</li>
+            <li>MeshCore: pierwszy kontakt przez flood, potem zapamiętane ścieżki bezpośrednie (direct); Meshtastic opiera się głównie na floodingu.</li>
             <li>Niższe zużycie energii i lżejszy stos.</li>
             <li>Mniejsza, ale rosnąca społeczność i ekosystem.</li>
           </ul>
@@ -105,7 +105,7 @@ export default function MeshCorePage() {
           <ul className="list-disc pl-5">
             <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://lorameshcore.pl">lorameshcore.pl — portal PL</a></li>
             <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://diver.net.pl/meshcore">diver.net.pl/meshcore — przewodniki</a></li>
-            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://github.com/meshcore">MeshCore — GitHub (jeśli dostępny)</a></li>
+            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://github.com/meshcore">MeshCore — GitHub</a></li>
           </ul>
         </Section>
       </div>

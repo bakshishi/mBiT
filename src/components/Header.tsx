@@ -61,7 +61,7 @@ export default function Header() {
                 className={({ isActive }) =>
                   `${linkBase} ${
                     isActive
-                      ? 'text-white bg-gradient-to-r from-[#667eea] to-[#764ba2]'
+                      ? 'text-white bg-gradient-to-r from-[#5a67d8] to-[#764ba2]'
                       : 'text-slate-800 hover:bg-slate-100'
                   }`
                 }
@@ -99,7 +99,7 @@ export default function Header() {
               className={({ isActive }) =>
                 `block ${linkBase} ${
                   isActive
-                    ? 'text-white bg-gradient-to-r from-[#667eea] to-[#764ba2]'
+                    ? 'text-white bg-gradient-to-r from-[#5a67d8] to-[#764ba2]'
                     : 'text-slate-800 hover:bg-slate-100'
                 }`
               }
