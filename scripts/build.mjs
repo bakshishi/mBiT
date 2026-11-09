@@ -1,5 +1,7 @@
 import * as esbuild from 'esbuild'
 import { rimraf } from 'rimraf'
+import { cp } from 'node:fs/promises'
+import { existsSync } from 'node:fs'
 import stylePlugin from 'esbuild-style-plugin'
 import autoprefixer from 'autoprefixer'
 import tailwindcss from 'tailwindcss'
@@ -8,6 +10,17 @@ const args = process.argv.slice(2)
 const isProd = args[0] === '--production'
 
 await rimraf('dist')
+
+// Statyczne zasoby (obrazy, favicon, robots.txt) trafiają do dist/ zarówno w trybie dev, jak i produkcyjnym.
+if (existsSync('public')) {
+  await cp('public', 'dist', { recursive: true })
+}
+
+/**
+ * Live reload wstrzykiwany wyłącznie w trybie deweloperskim (nie trafia do wersji produkcyjnej).
+ */
+const devReloadBanner =
+  "new EventSource('/esbuild').addEventListener('change', () => location.reload())"
 
 /**
  * @type {esbuild.BuildOptions}
@@ -24,6 +37,7 @@ const esbuildOpts = {
   minify: isProd,
   treeShaking: true,
   jsx: 'automatic',
+  banner: isProd ? {} : { js: devReloadBanner },
   loader: {
     '.html': 'copy',
     '.png': 'file',

@@ -1,0 +1,21 @@
+# Zależności
+node_modules/
+
+# Wynik budowania (generowany przez `npm run build` i workflow GitHub Pages)
+dist/
+
+# Logi i pliki tymczasowe
+*.log
+npm-debug.log*
+*.tsbuildinfo
+
+# Środowisko lokalne
+.env
+.env.*
+!.env.example
+
+# System / edytory
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
