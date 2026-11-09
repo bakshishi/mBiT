@@ -1,38 +1,75 @@
-# mBiT.pm - Mesh Bydgoszcz i Toruń
+# mBiT.pm — Mesh Bydgoszcz i Toruń
 
-Production-ready React + TypeScript site focusing on emergency communications (Meshtastic, MeshCore, Reticulum, PMR446, CB).
+Statyczny serwis o łączności awaryjnej w regionie Bydgoszczy i Torunia: Meshtastic, MeshCore, Reticulum, PMR446, CB, krótkofalarstwo, plan awaryjny i testy łączności.
 
-Tech
-- React 18, react-router (HashRouter), Tailwind CSS, lucide-react, shadcn UI available (not modified).
-- Accessibility-first: Skip link, keyboard navigation, focus rings, ARIA labels.
-- Mobile-first, performant, minimal JS.
+Motto: **Connectivity Without Limits**
 
-Development
-- npm run dev (already configured in project)
-- Live preview runs in iframe with esbuild.
+## Technologie
 
-Structure
-- Components: Layout, Header, Footer, CookieBanner, SkipLink, CopyField.
-- Pages: Home, Meshtastic, MeshCore, Reticulum, PMR446, CB, Systems, Plan, Privacy, Cookies, Accessibility, EAA, NotFound.
+- React 18 + TypeScript, react-router 7 (`HashRouter`)
+- Tailwind CSS (+ komponenty shadcn/Radix w `src/components/ui` — obecnie nieużywane przez żadną stronę)
+- lucide-react (ikony)
+- esbuild jako bundler (`scripts/build.mjs`)
+- Hosting: GitHub Pages (workflow `.github/workflows/pages.yml`)
 
-Branding
-- Gradient primary: #667eea → #764ba2
-- Motto: Connectivity Without Limits
+## Uruchomienie
 
-WCAG & GDPR
-- Semantic headings, skip link, focus indicators, alt text, keyboard nav.
-- Cookie banner stores consent in localStorage; no tracking by default.
-- Separate pages for Privacy, Cookies, Accessibility, EAA.
+Wymagany Node.js 20+.
 
-Deployment Checklist (server/CDN)
-- HTTPS only (TLS, HSTS), HTTP->HTTPS redirect.
-- Static caching (immutable for hashed assets), gzip/br compression.
-- CSP (default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self' 'unsafe-inline').
-- Add sitemap.xml and robots.txt.
-- Preconnect to required external origins.
-- Regular accessibility audits (WAVE, axe).
+```bash
+npm install        # instalacja zależności
+npm run dev        # serwer deweloperski z live reload (adres w konsoli)
+npm run build      # build produkcyjny do dist/
+npm run typecheck  # sprawdzenie typów (tsc --noEmit)
+```
 
-Notes
-- Images use placeholder generator: https://sider.ai/autoimage/... ale to nei działa są puste miejsca po grafikach
-- CLI commands include EU_868 + LONG_FAST with hop limit 3.
-- EU rule: duty cycle 10% (max 6 min/hour).
+`npm run build` czyści `dist/`, kopiuje zawartość `public/` (obrazy, favicon, robots.txt) i buduje aplikację. Katalog `dist/` jest generowany i nie jest przechowywany w repozytorium.
+
+## Struktura
+
+```
+index.html              szablon strony (lang="pl", meta, favicon)
+public/                 zasoby statyczne kopiowane do dist/ (images/*.webp, favicon.svg, robots.txt)
+scripts/build.mjs       build / serwer deweloperski (esbuild + Tailwind)
+src/
+  App.tsx               routing (HashRouter, 14 stron + 404)
+  main.tsx              punkt wejścia
+  components/           Layout, Header, Footer, CookieBanner, SmartImage, Section, PageToc, ...
+  components/ui/        komponenty shadcn (zob. uwaga wyżej; można usunąć wraz z zależnościami Radix)
+  pages/                strony główne: Home, Meshtastic, MeshCore, Reticulum, PMR446, CB,
+                        Systems, Plan, Resources, Tests, Privacy, Cookies, Accessibility, EAA, NotFound
+  pages/cb|plan|pmr|systems/   podsekcje dużych stron
+.github/workflows/
+  pages.yml             build i wdrożenie na GitHub Pages (push do main)
+  ci.yml                build + typecheck dla pull requestów
+```
+
+## Obrazy
+
+Obrazy trzymamy w `public/images/` (format WebP) i odwołujemy się do nich ścieżką względną, np. `images/meshtastic.webp` (bez wiodącego `/`, żeby działały na GitHub Pages pod podścieżką). Komponent `SmartImage` przy błędzie ładowania pokazuje lokalny placeholder SVG — nie są wykonywane żadne zapytania do zewnętrznych serwisów.
+
+## Marka
+
+- Gradient główny: `#667eea` → `#764ba2`
+
+## Dostępność i prywatność
+
+- Skip link, nawigacja klawiaturą, widoczne focusy, atrybuty ARIA, semantyczne nagłówki.
+- Baner cookies zapisuje wybór w `localStorage`; serwis nie używa analityki ani śledzenia.
+- Osobne strony: Prywatność, Cookies, Dostępność, EAA.
+
+## Wdrożenie
+
+Push do `main` uruchamia workflow `pages.yml` (Node 20, `npm run build`, publikacja `dist/` na GitHub Pages).
+
+Uwagi:
+
+- Na GitHub Pages nie można ustawiać własnych nagłówków HTTP (CSP, HSTS itp.). Jeśli będą potrzebne, wymagają własnego serwera lub CDN przed stroną.
+- Brak pliku `package-lock.json` oznacza, że CI używa `npm install`. Po wygenerowaniu lockfile (`npm install` lokalnie i commit) workflow automatycznie przełączy się na `npm ci`.
+- Dzięki `HashRouter` (adresy `#/trasa`) nie są potrzebne reguły przekierowań, ale podstrony nie są indeksowane osobno przez wyszukiwarki.
+
+## Notatki merytoryczne
+
+- Polecenia CLI Meshtastic: region `EU_868`, preset `LONG_FAST`, hop limit 3.
+- Przepisy UE: duty cycle 10% (maks. 6 min nadawania na godzinę) w paśmie 869,4–869,65 MHz.
+- Treści (częstotliwości, kanały, harmonogram testów, linki) wymagają okresowej weryfikacji.

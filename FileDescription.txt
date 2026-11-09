@@ -1,32 +1,34 @@
 📂 Struktura Katalogów:
-├── dist/            ⭐ To jest wersja produkcyjna (zalecana do bezpośredniego użycia)
-│   ├── index.html   → Otwórz ten plik w przeglądarce, aby zobaczyć podgląd strony
-│   ├── assets/      → Zawiera zintegrowane pliki CSS, JS i inne zasoby
-│   └── ...
-├── src/             📝 Katalog kodu źródłowego (do rozwoju i modyfikacji)
-│   ├── components/  → Komponenty React
-│   ├── App.jsx      → Główny komponent aplikacji
-│   ├── index.js     → Plik wejściowy
-│   └── ...
-├── package.json     📦 Konfiguracja zależności projektu
+├── src/             📝 Kod źródłowy (React + TypeScript)
+│   ├── App.tsx      → Routing (HashRouter) i drzewo tras
+│   ├── main.tsx     → Punkt wejścia aplikacji
+│   ├── components/  → Layout, Header, Footer, CookieBanner, SmartImage, ...
+│   ├── pages/       → Strony serwisu (Home, Meshtastic, MeshCore, Reticulum, PMR446, CB,
+│   │                  Systems, Plan, Resources, Tests, Privacy, Cookies, Accessibility, EAA)
+│   │   └── cb/ plan/ pmr/ systems/  → podsekcje dużych stron
+│   ├── hooks/, lib/ → Pomocnicze hooki i funkcje
+│   └── shadcn.css   → Style bazowe (zmienne Tailwind/shadcn)
+├── public/          🖼️ Zasoby statyczne kopiowane do dist/ (images/*.webp, favicon.svg, robots.txt)
+├── scripts/         🔧 build.mjs — build i serwer deweloperski (esbuild + Tailwind)
+├── .github/workflows/ ⚙️ pages.yml (wdrożenie na GitHub Pages), ci.yml (build + typecheck dla PR)
+├── index.html       📄 Szablon strony (wejście dla buildu)
+├── package.json     📦 Zależności i skrypty (dev, build, typecheck)
+├── tsconfig.json    🧩 Konfiguracja TypeScript
+├── tailwind.config.js 🎨 Konfiguracja Tailwind CSS
 ├── README.md        📖 Dokumentacja projektu
-└── ...
+├── DeploymentGuide.txt 🚀 Przewodnik wdrożenia
+└── dist/            (generowany przez `npm run build`, nie jest w repozytorium)
 
-🚀 Szybki Start (Dwie Opcje):
-Opcja 1: Bezpośrednie Użycie (Zalecane dla Początkujących)
-1. Przejdź do katalogu dist/
-2. Kliknij dwukrotnie plik index.html
-3. Strona otworzy się w Twojej przeglądarce!
-
-Opcja 2: Tryb Rozwoju (Dla Użytkowników z Doświadczeniem w Kodowaniu)
-1. Upewnij się, że masz zainstalowany Node.js (zalecana wersja: 16+)
-2. Otwórz terminal/wiersz poleceń w katalogu głównym projektu
-3. Uruchom: npm install
-4. Uruchom: npm start
-5. Serwer deweloperski automatycznie otworzy się w Twojej przeglądarce
+🚀 Szybki Start:
+1. Zainstaluj Node.js (wersja 20 lub nowsza)
+2. W katalogu głównym projektu uruchom: npm install
+3. Tryb deweloperski (live reload): npm run dev — adres wyświetli się w konsoli
+4. Build produkcyjny: npm run build — wynik w katalogu dist/
+5. Sprawdzenie typów: npm run typecheck
 
 💡 Wskazówki:
-- Katalog dist/ zawiera zoptymalizowaną wersję i może być bezpośrednio wdrożony na serwer
-- Plik index.html na poziomie głównym nie jest wersją końcową — zawsze używaj tego wewnątrz dist/
-- Aby zmodyfikować kod, edytuj pliki wewnątrz src/ i przebuduj projekt
+- Edytuj pliki wewnątrz src/ i public/, a następnie przebuduj projekt
+- Katalog dist/ jest generowany — nie edytuj go ręcznie i nie dodawaj do repozytorium
+- Obrazy dodawaj do public/images/ w formacie WebP i odwołuj się do nich ścieżką względną (images/nazwa.webp)
+- Po pushu do gałęzi main strona jest automatycznie budowana i publikowana na GitHub Pages
 - Projekt korzysta z technologii TypeScript i Tailwind CSS

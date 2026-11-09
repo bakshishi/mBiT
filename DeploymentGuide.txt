@@ -2,7 +2,13 @@
 ===========================
 
 📋 Przygotowanie:
-Upewnij się, że masz już katalog dist/ — zawiera on finalną wersję Twojej strony
+Katalog dist/ nie jest przechowywany w repozytorium — wygeneruj go lokalnie:
+1. npm install
+2. npm run build
+Po zakończeniu w dist/ znajdziesz finalną wersję strony (index.html, main.js, main.css, images/ itd.)
+
+ℹ️ To repozytorium wdraża się samo na GitHub Pages (workflow .github/workflows/pages.yml) po
+każdym pushu do gałęzi main — ręczne przesyłanie dist/ jest potrzebne tylko przy innych hostingach.
 
 💡 Wdrożenie na Platformach Chmurowych (Zalecane):
 
@@ -28,12 +34,12 @@ Upewnij się, że masz już katalog dist/ — zawiera on finalną wersję Twojej
 3. Poczekaj na zakończenie przesyłania
 4. Otrzymasz losową domenę (można dostosować w ustawieniach)
 
-📘 GitHub Pages (pages.github.com) – Darmowe i Niezawodne
-1. Utwórz nowe repozytorium na GitHub
-2. Prześlij zawartość folderu dist/ do repozytorium
-3. Przejdź do Ustawień repozytorium → Pages
-4. Wybierz "Deploy from a branch" → główna gałąź
-5. Uzyskaj dostęp do swojej strony pod adresem username.github.io/nazwa-repozytorium
+📘 GitHub Pages (pages.github.com) – Darmowe i Niezawodne (metoda używana w tym projekcie)
+1. W Ustawieniach repozytorium → Pages ustaw Source: "GitHub Actions"
+2. Wypchnij zmiany do gałęzi main — workflow "Deploy to GitHub Pages" zbuduje i opublikuje stronę
+3. Adres strony pojawi się w podsumowaniu workflow (zwykle username.github.io/nazwa-repozytorium
+   albo własna domena ustawiona w Pages)
+4. Postęp wdrożenia sprawdzisz w zakładce Actions
 
 ---
 
@@ -45,7 +51,7 @@ Automatyczne Wdrożenie oparte na Git
 3. Skonfiguruj ustawienia budowy:
    - Komenda budowy: npm run build
    - Katalog publikacji: dist
-   - Wersja Node.js: 16.x lub wyższa
+   - Wersja Node.js: 20.x lub wyższa
 4. Każde wypchnięcie automatycznie uruchomi budowę i wdrożenie
 
 Tradycyjne Wdrożenie na Serwerze
@@ -80,7 +86,7 @@ Jeśli posiadasz własny serwer:
 ---
 
 🆘 Rozwiązywanie Problemów:
-1. Upewnij się, że przesyłasz zawartość dist/, a nie cały projekt
+1. Upewnij się, że przesyłasz zawartość dist/ (po npm run build), a nie cały projekt
 2. Sprawdź, czy index.html znajduje się w katalogu głównym
 3. Przejrzyj dzienniki błędów na platformie hostingowej
 4. Upewnij się, że wszystkie pliki zostały poprawnie przesłane
