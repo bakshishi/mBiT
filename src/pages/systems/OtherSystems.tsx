@@ -27,7 +27,7 @@ export default function SystemsOtherSystems() {
         <div className="rounded-lg border border-slate-200 p-4">
           <h3 className="text-sm font-medium text-slate-900">D‑STAR</h3>
           <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-            <li>Cyfrowy głos (DV, AMBE+2) + dane; oraz tryb DD (do 128 kb/s na 1,2 GHz).</li>
+            <li>Cyfrowy głos (DV, kodek AMBE) + dane; oraz tryb DD (do 128 kb/s na 1,2 GHz).</li>
             <li>Łączenie przez reflektory — łączność globalna i usługi danych (D‑PRS).</li>
           </ul>
         </div>

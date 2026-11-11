@@ -23,6 +23,10 @@ interface ResourceItem {
  * ResourcesPage
  * Presents categorized link cards with concise descriptions and external-link affordance.
  */
+/** Tworzy poprawny identyfikator HTML z tytułu grupy (bez spacji i znaków diakrytycznych). */
+const slug = (t: string) =>
+  'res-' + t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
 export default function ResourcesPage() {
   const groups: Array<{ title: string; items: ResourceItem[] }> = [
     {
@@ -123,14 +127,14 @@ export default function ResourcesPage() {
       <header className="mb-8">
         <h1 className="text-2xl font-bold text-slate-900">Zasoby internetowe</h1>
         <p className="text-slate-700 mt-1">
-          Zbiór linków używanych w serwisie: dokumentacja, przewodniki, społeczności i łączność awaryjna. Linki dostępności/RODO pominięto.
+          Zbiór linków używanych w serwisie: dokumentacja, przewodniki, społeczności i łączność awaryjna.
         </p>
       </header>
 
       <div className="grid gap-8 md:grid-cols-2">
         {groups.map((group) => (
-          <section key={group.title} aria-labelledby={group.title}>
-            <h2 id={group.title} className="text-lg font-semibold text-slate-900">{group.title}</h2>
+          <section key={group.title} aria-labelledby={slug(group.title)}>
+            <h2 id={slug(group.title)} className="text-lg font-semibold text-slate-900">{group.title}</h2>
             <ul className="mt-3 space-y-3">
               {group.items.map((item) => (
                 <li key={item.href}>

@@ -45,9 +45,9 @@ export default function ReticulumPage() {
 
         <Section id="law" title="Parametry LoRa (PL/EU) i zgodność">
           <ul className="list-disc pl-5">
-            <li>Zakres EU_868: 868–869.525 MHz; preferowane: 868 MHz lub 869.525 MHz.</li>
-            <li>Parametry referencyjne: BW 125 kHz, SF ≥ 10, CR 4/8 (dla 868 MHz).</li>
-            <li>Moc i duty cycle: zgodnie z regulacjami UE (10%/h, lokalne limity ERP).</li>
+            <li>Pasmo EU868 ma podpasma o różnych limitach: 868,0–868,6 MHz — duty cycle 1%; 869,4–869,65 MHz — 10% i do 500 mW ERP.</li>
+            <li>Wszystkie węzły jednej sieci muszą mieć identyczne parametry (częstotliwość, BW, SF, CR). Dobierz je do wybranego podpasma i zasięgu; aktualne przykłady: dokumentacja Reticulum/RNode.</li>
+            <li>Moc i duty cycle: zgodnie z regulacjami UE/UKE dla wybranego podpasma.</li>
           </ul>
         </Section>
 

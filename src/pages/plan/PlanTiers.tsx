@@ -103,7 +103,7 @@ export default function PlanTiers() {
           ]}
           range={[
             'CB: 5–20 km, do ~40 km ze stacji bazowej i dobrą anteną',
-            'PMR z wysokości: możliwe >100 km w sprzyjających warunkach',
+            'PMR z wysokości (szczyt, wysoki budynek): zwykle kilka–kilkanaście km; rekordy z gór są wyjątkami',
             'Meshtastic mesh: zasięg rozszerzany przez kolejne węzły',
           ]}
           pros={['Lepsze pokrycie obszaru', 'Wsparcie repeaterów', 'CB: większa moc i penetracja przeszkód']}
@@ -114,13 +114,13 @@ export default function PlanTiers() {
           title="Tier 3 — Dalekosiężna (30 km+, globalnie)"
           purpose="Połączenia dalekiego zasięgu, w tym międzynarodowe."
           gear={[
-            'Meshtastic DX (konfiguracje maksymalnego zasięgu, np. Very Long Slow)',
+            'Meshtastic DX (wolne presety dalekiego zasięgu, np. LONG_SLOW — kosztem przepustowości i czasu nadawania)',
             'Wysokie repetery Meshtastic (maszty, wieże, wysokie budynki)',
             'Winlink (email przez radio, wymaga licencji)',
             'Krótkofalarstwo HF (wymaga licencji)',
           ]}
           range={[
-            'Meshtastic DX: potwierdzone połączenia >300 km',
+            'Meshtastic DX: pojedyncze rekordowe łączności z wysokich punktów sięgają setek km — to wyjątki, nie podstawa planu',
             'Winlink: globalny zasięg (fale krótkie HF)',
           ]}
           pros={['Możliwy zasięg globalny', 'Email przez radio (Winlink)', 'Mostkowanie sieci mesh przez Internet']}

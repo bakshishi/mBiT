@@ -23,7 +23,7 @@ export default function CbChannels() {
           wśród kierowców (informacje o trasie, zagrożeniach, korkach).
         </li>
         <li>
-          <span className="font-medium text-slate-900">Kanał 28 (27.280 MHz)</span> — wywoławczy/ogólny.
+          <span className="font-medium text-slate-900">Kanał 28 (27.285 MHz)</span> — wywoławczy/ogólny.
           Służy do nawiązania kontaktu i przeniesienia rozmowy.
         </li>
         <li>
@@ -40,7 +40,8 @@ export default function CbChannels() {
         </li>
       </ul>
       <p className="mt-4 text-sm text-slate-600">
-        Zwyczajowo rozmowy przenosi się poza kanały wywoławcze/awaryjne. Zanim naciśniesz PTT —
+        Przeznaczenie kanałów (poza kanałem 9) to zwyczaje środowiskowe, a nie przepisy — mogą się różnić
+        regionalnie. Zwyczajowo rozmowy przenosi się poza kanały wywoławcze/awaryjne. Zanim naciśniesz PTT —
         nasłuchaj, czy kanał jest wolny.
       </p>
     </div>

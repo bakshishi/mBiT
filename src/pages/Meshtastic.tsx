@@ -109,7 +109,7 @@ export default function MeshtasticPage() {
             </details>
           </div>
           <p className="mt-3">
-            Zmiana presetu wymaga koordynacji całej społeczności — wszystkie nody muszą używać tego samego presetu.
+            Oficjalny blog Meshtastic sugeruje przejście z LongFast na Medium/Short w gęstych sieciach (orientacyjnie powyżej ok. 60 węzłów, zwłaszcza w miastach), by ograniczyć kolizje. Zmiana presetu wymaga koordynacji całej społeczności — wszystkie nody muszą używać tego samego presetu.
           </p>
         </Section>
 
@@ -117,8 +117,12 @@ export default function MeshtasticPage() {
           <ul className="mt-2 grid gap-2">
             <li><strong>CLIENT</strong> — standardowy węzeł użytkownika (urządzenia przenośne).</li>
             <li><strong>ROUTER</strong> — retransmisja wszystkich pakietów (stacje stałe/repetery).</li>
-            <li><strong>ROUTER_CLIENT</strong> — hybrydowa rola.</li>
+            <li><strong>CLIENT_BASE</strong> — domowa stacja bazowa (np. antena na dachu), przekazuje pakiety z Twoich słabszych węzłów.</li>
+            <li><strong>CLIENT_MUTE</strong> — węzeł nie retransmituje cudzych pakietów.</li>
           </ul>
+          <p className="mt-2">
+            Role <strong>ROUTER_CLIENT</strong> (wycofana w firmware 2.3.15) i <strong>REPEATER</strong> (wycofana w 2.7.11) nie są już zalecane — sprawdź aktualną listę w dokumentacji.
+          </p>
           <p className="mt-2">
             Rekomendacja: większość użytkowników jako CLIENT; węzły wysokościowe tylko w porozumieniu jako ROUTER.
           </p>

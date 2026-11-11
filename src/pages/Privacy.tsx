@@ -20,7 +20,7 @@ export default function PrivacyPage() {
     >
       <Section id="admin" title="Administrator i kontakt">
         <p>
-          Administratorem danych jest zespół mBiT.pm. Kontakt w każdej sprawie dotyczącej danych osobowych:
+          Serwis prowadzi społeczność mBiT.pm (Mesh Bydgoszcz i Toruń) — projekt niekomercyjny. Kontakt w każdej sprawie dotyczącej danych osobowych:
           <br />
           <a
             className="text-indigo-700 dark:text-indigo-300 underline underline-offset-2"
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
 
       <Section id="cookies" title="Pliki cookies i podobne technologie">
         <p>
-          Serwis korzysta wyłącznie z plików cookies niezbędnych do jego działania (np. zapamiętanie decyzji o banerze cookies). Nie stosujemy śledzących cookies ani analityki naruszającej prywatność bez wyraźnej zgody.
+          Serwis nie ustawia plików cookies. W pamięci przeglądarki (localStorage) zapisujemy jedynie Twój wybór z banera cookies. Nie stosujemy analityki ani śledzenia.
         </p>
       </Section>
 
@@ -71,8 +71,9 @@ export default function PrivacyPage() {
 
       <Section id="security" title="Bezpieczeństwo">
         <ul className="list-disc pl-6 space-y-2">
-          <li>HTTPS, dobre praktyki nagłówków bezpieczeństwa (CSP, HSTS), minimalizacja powierzchni ataku.</li>
-          <li>Aktualizacje oprogramowania i bibliotek, kontrola błędów oraz monitoring.</li>
+          <li>Serwis jest statyczny i udostępniany przez HTTPS za pośrednictwem GitHub Pages; nie zbiera formularzy ani kont użytkowników.</li>
+          <li>Hostingiem jest GitHub (Microsoft), który może przetwarzać dane techniczne odwiedzających (np. adres IP w logach serwera) zgodnie z własną polityką prywatności.</li>
+          <li>Regularnie aktualizujemy oprogramowanie i biblioteki.</li>
         </ul>
       </Section>
 

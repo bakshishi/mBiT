@@ -16,19 +16,19 @@ export default function CookiesPage() {
   return (
     <PageContainer
       title="Polityka Cookies"
-      intro="Używamy wyłącznie plików cookies niezbędnych do funkcjonowania serwisu mBiT.pm."
+      intro="Serwis mBiT.pm nie ustawia plików cookies. Zapamiętanie Twojego wyboru w banerze odbywa się w pamięci przeglądarki (localStorage)."
     >
       <Section id="what" title="Jakie cookies wykorzystujemy?">
         <ul className="list-disc pl-6 space-y-2">
-          <li>Niezbędne (required) – np. zapamiętanie decyzji dotyczącej banera cookies i preferencji interfejsu.</li>
-          <li>Nie używamy śledzących ani marketingowych cookies bez uprzedniej, wyraźnej zgody.</li>
+          <li>Zapisujemy wyłącznie jeden wpis w localStorage przeglądarki („cookie-consent”) z Twoim wyborem w banerze. Nie jest on wysyłany na serwer.</li>
+          <li>Nie używamy analityki, śledzących ani marketingowych cookies. Wybór „Akceptuj”/„Odrzuć” nie zmienia działania serwisu.</li>
         </ul>
       </Section>
 
       <Section id="control" title="Jak kontrolować cookies?">
         <ul className="list-disc pl-6 space-y-2">
-          <li>W każdej chwili możesz usunąć cookies w ustawieniach przeglądarki.</li>
-          <li>Możesz też zresetować decyzję dot. cookies usuwając dane strony (np. localStorage).</li>
+          <li>W każdej chwili możesz usunąć dane strony w ustawieniach przeglądarki.</li>
+          <li>Usunięcie danych strony (localStorage) spowoduje ponowne wyświetlenie banera.</li>
         </ul>
       </Section>
 

@@ -42,7 +42,7 @@ export default function HomePage() {
             <div className="mt-6 flex gap-3">
               <NavLink
                 to="/meshtastic"
-                className="inline-flex items-center rounded-md bg-gradient-to-r from-[#667eea] to-[#764ba2] px-4 py-2 text-white font-medium hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
+                className="inline-flex items-center rounded-md bg-gradient-to-r from-[#5a67d8] to-[#764ba2] px-4 py-2 text-white font-medium hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
               >
                 Start z Meshtastic
               </NavLink>
@@ -54,7 +54,7 @@ export default function HomePage() {
               </NavLink>
             </div>
             <p className="mt-3 text-xs text-slate-600">
-              EU: duty cycle LoRa 10%/h, rekomendowany preset: LONG_FAST (EU_868) i hop limit 3.
+              EU: duty cycle LoRa 10%/h, domyślny preset: LONG_FAST (EU_868) i hop limit 3.
             </p>
           </div>
           <div className="relative">

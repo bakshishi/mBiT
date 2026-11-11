@@ -30,7 +30,7 @@ export default function PlanProcedures() {
         <div>
           <h3 className="text-sm font-medium text-slate-900">Krok 1: Sprawdź łączność lokalną (PMR446)</h3>
           <ol className="mt-2 list-decimal pl-5 text-sm text-slate-700 space-y-1">
-            <li>Włącz PMR i ustaw kanał 2 (awaryjny) lub 3 z CTCSS 14 w górach.</li>
+            <li>Włącz PMR i ustaw kanał 2 (testy łączności) lub 3 z CTCSS 14 w górach. Kanał 1 zostaw na zagrożenie życia.</li>
             <li>Wywołaj ogólnie: „Wywołanie ogólne w testach łączności awaryjnej, woła [imię/znak/miasto]”.</li>
             <li>Słuchaj przez ~30 sekund; w razie braku odpowiedzi spróbuj kanału 12 (zapasowy).</li>
           </ol>
