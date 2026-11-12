@@ -87,7 +87,7 @@ export default function PageToc({ items, offset, ariaLabel = 'Spis treści' }: P
   return (
     <nav
       aria-label={ariaLabel}
-      className="mb-6 rounded-lg border border-slate-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 p-2"
+      className="mb-6 rounded-lg border border-slate-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 p-2 print:hidden"
     >
       <ul className="flex flex-wrap gap-2">
         {items.map((item) => (

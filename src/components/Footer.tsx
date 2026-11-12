@@ -13,7 +13,7 @@ import { ExternalLink } from 'lucide-react'
  */
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-slate-200 bg-white">
+    <footer className="mt-16 border-t border-slate-200 bg-white print:hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10 grid gap-8 md:grid-cols-3">
         <section aria-labelledby="quick-links">
           <h2 id="quick-links" className="text-sm font-semibold text-slate-900">

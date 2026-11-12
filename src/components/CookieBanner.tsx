@@ -35,7 +35,7 @@ export default function CookieBanner() {
       role="dialog"
       aria-label="Zgoda na Cookies"
       aria-modal="false"
-      className="fixed inset-x-0 bottom-0 z-50 bg-slate-900 text-white"
+      className="fixed inset-x-0 bottom-0 z-50 bg-slate-900 text-white print:hidden"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm">

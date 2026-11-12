@@ -30,14 +30,16 @@ export default function Header() {
     { to: '/pmr446', label: 'PMR446' },
     { to: '/cb', label: 'CB Radio' },
     { to: '/plan', label: 'Plan Awaryjny' },
-    { to: '/systems', label: 'Systemy Dodatkowe' },
+    { to: '/systems', label: 'Systemy' },
+    { to: '/resources', label: 'Zasoby' },
+    { to: '/tests', label: 'Testy' },
   ]
 
   const linkBase =
-    'px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 focus-visible:ring-offset-transparent'
+    'px-2 py-1.5 lg:px-3 lg:py-2 rounded-md text-xs lg:text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 focus-visible:ring-offset-transparent'
 
   return (
-    <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
+    <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200 print:hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">

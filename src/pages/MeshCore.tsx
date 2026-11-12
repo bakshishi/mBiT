@@ -4,6 +4,7 @@
  */
 
 import React from 'react'
+import CopyField from '../components/CopyField'
 import PageHeader from '../components/PageHeader'
 import PageToc from '../components/PageToc'
 import Section from '../components/Section'
@@ -19,6 +20,7 @@ export default function MeshCorePage() {
     { id: 'law', label: 'Prawo i ograniczenia (PL/EU)' },
     { id: 'use', label: 'Zastosowania' },
     { id: 'config', label: 'Konfiguracja EU/UK Narrow' },
+    { id: 'hashmode', label: 'Path Hash Mode (2 bajty)' },
     { id: 'diff', label: 'Różnice vs Meshtastic' },
     { id: 'start', label: 'Jak zacząć' },
     { id: 'netiquette', label: 'Etykieta' },
@@ -67,6 +69,60 @@ export default function MeshCorePage() {
             <li>Spreading Factor: 8</li>
             <li>Coding Rate: 8</li>
           </ul>
+        </Section>
+
+        <Section id="hashmode" title="Path Hash Mode — dlaczego i jak włączyć tryb 2 bajtów?">
+          <div className="space-y-4 text-slate-700 text-sm">
+            <p>
+              W sieci MeshCore każdy repeater dopisuje do nagłówka przesyłanego pakietu skrót (prefiks) swojego klucza
+              publicznego, tworząc zapisaną ścieżkę (path hash). Pozwala to na śledzenie trasy pakietów na mapach (np.
+              MeshMapper) oraz zapobiega powtórnym retransmisjom.
+            </p>
+
+            <div className="rounded-lg border border-indigo-100 bg-indigo-50/60 p-4">
+              <h4 className="font-semibold text-indigo-950 mb-1">Dlaczego społeczność oczekuje trybu 2 bajtów?</h4>
+              <ul className="list-disc pl-5 space-y-1 text-slate-700">
+                <li>
+                  <strong>Problem 1 bajta (1-byte hash):</strong> Domyślny w starszych wersjach tryb 1-bajtowy dawał zaledwie 254
+                  unikalne identyfikatory. W rozwijających się sieciach prowadzi to do częstych <em>kolizji adresów</em> (dwa różne
+                  węzły w okolicy mają ten sam hash, co uniemożliwia poprawne mapowanie tras).
+                </li>
+                <li>
+                  <strong>Tryb 2 bajtów (2-byte hash / Mode 1):</strong> Zwiększa przestrzeń identyfikatorów do <strong>65 536</strong>,
+                  praktycznie eliminując kolizje w sieci regionalnej.
+                </li>
+                <li>
+                  <strong>Limit skoków (hops):</strong> Pole ścieżki ma limit 64 bajtów, co w trybie 2-bajtowym pozwala na aż <strong>32 przeskoki</strong> — w zupełności wystarczające dla topologii regionalnej.
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-lg border border-amber-200 bg-amber-50/70 p-3 text-xs text-amber-900">
+              ⚠️ <strong>Wymaganie firmware:</strong> Obsługa trybu 2-bajtowego wymaga oprogramowania układowego w wersji <strong>1.14.1 lub nowszej</strong>. Starsze wersje firmware nie rozpoznają pakietów wielobajtowych i mogą je ignorować.
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-slate-900 mb-2">Instrukcja włączenia trybu 2-bajtowego:</h4>
+              <div className="space-y-3">
+                <div>
+                  <span className="font-medium text-slate-800 text-xs block mb-1">1. Konsola szeregowa / CLI (port USB lub remote admin):</span>
+                  <div className="space-y-2">
+                    <p className="text-xs text-slate-600">Sprawdzenie aktualnego trybu:</p>
+                    <CopyField label="Kopiuj polecenie sprawdzające" command="get path.hash.mode" />
+                    <p className="text-xs text-slate-600">Ustawienie trybu 2 bajtów (wartość <code>1</code> = 2 bajty; <code>0</code> = 1 bajt, <code>2</code> = 3 bajty):</p>
+                    <CopyField label="Kopiuj polecenie ustawiające 2 bajty" command="set path.hash.mode 1" />
+                  </div>
+                </div>
+
+                <div className="mt-3">
+                  <span className="font-medium text-slate-800 text-xs block mb-1">2. W aplikacji mobilnej (MeshCore Companion App):</span>
+                  <p className="text-xs text-slate-600">
+                    Połącz się z węzłem przez Bluetooth ➔ wejdź w <strong>Settings</strong> (Ustawienia) ➔ <strong>Radio / Network Settings</strong> ➔ znajdź opcję <strong>Path Hash Mode</strong> ➔ wybierz <strong>2 bytes (Mode 1)</strong> i zatwierdź (Save/Apply).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </Section>
 
         <Section id="diff" title="Różnice vs Meshtastic">

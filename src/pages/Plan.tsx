@@ -4,6 +4,7 @@
  */
 
 import React from 'react'
+import { Printer } from 'lucide-react'
 import PlanIntro from './plan/PlanIntro'
 import PlanTiers from './plan/PlanTiers'
 import PlanEquipment from './plan/PlanEquipment'
@@ -40,11 +41,22 @@ export default function PlanPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">Plan Awaryjny — Multi‑System</h1>
-        <p className="text-slate-700 mt-1">
-          Praktyczny plan łączności awaryjnej: poziomy (Tier 1–3), sprzęt, zasilanie, procedury, testy i checklisty.
-        </p>
+      <header className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-slate-900">Plan Awaryjny — Multi‑System</h1>
+          <p className="text-slate-700 mt-1">
+            Praktyczny plan łączności awaryjnej: poziomy (Tier 1–3), sprzęt, zasilanie, procedury, testy i checklisty.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => window.print()}
+          className="print:hidden self-start sm:self-auto inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
+          aria-label="Drukuj plan awaryjny lub zapisz jako PDF"
+        >
+          <Printer size={16} aria-hidden="true" />
+          Drukuj / Zapisz PDF
+        </button>
       </header>
 
       {/* Unified ToC */}

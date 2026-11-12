@@ -39,6 +39,118 @@ export default function PMRChannels() {
           </Card>
         </div>
 
+        {/* Tabela wszystkich 16 kanałów PMR446 */}
+        <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200 bg-white">
+          <table className="w-full text-left text-sm border-collapse">
+            <thead className="bg-slate-50 text-slate-900 border-b border-slate-200">
+              <tr>
+                <th className="py-2.5 px-3 font-semibold">Kanał</th>
+                <th className="py-2.5 px-3 font-semibold">Częstotliwość</th>
+                <th className="py-2.5 px-3 font-semibold">Krok</th>
+                <th className="py-2.5 px-3 font-semibold">Zwyczajowe przeznaczenie w PL</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 text-slate-700">
+              <tr className="bg-red-50/40">
+                <td className="py-2 px-3 font-bold text-red-700">1</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.00625 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3"><span className="inline-block rounded bg-red-100 px-1.5 py-0.5 text-xs font-semibold text-red-800">SOS / Ratunkowy</span> Zagrożenie życia (subton 67.0 Hz)</td>
+              </tr>
+              <tr className="bg-amber-50/40">
+                <td className="py-2 px-3 font-bold text-amber-700">2</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.01875 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3"><span className="inline-block rounded bg-amber-100 px-1.5 py-0.5 text-xs font-semibold text-amber-800">Kryzysowy / Testy</span> Harmonogram: 13. dzień &amp; ostatnia sobota, 20:00</td>
+              </tr>
+              <tr className="bg-emerald-50/40">
+                <td className="py-2 px-3 font-bold text-emerald-700">3</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.03125 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3"><span className="inline-block rounded bg-emerald-100 px-1.5 py-0.5 text-xs font-semibold text-emerald-800">Góry / Turystyka</span> Wywoławczy górski (CTCSS 14 / 107.2 Hz)</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-3 font-medium text-slate-900">4</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.04375 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Ogólny, praca na budowach, łączność robocza</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-3 font-medium text-slate-900">5</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.05625 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Ogólny, wycieczki, łączność lokalna</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-3 font-medium text-slate-900">6</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.06875 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Ogólny, łączność hobbystyczna</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-3 font-medium text-slate-900">7</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.08125 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Koordynacja sąsiedzka i lokalne grupy kryzysowe</td>
+              </tr>
+              <tr className="bg-indigo-50/40">
+                <td className="py-2 px-3 font-bold text-indigo-700">8</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.09375 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3"><span className="inline-block rounded bg-indigo-100 px-1.5 py-0.5 text-xs font-semibold text-indigo-800">Wywoławczy EU</span> Nieformalny ogólny kanał wywoławczy w Europie</td>
+              </tr>
+              <tr className="bg-slate-50/80">
+                <td className="py-2 px-3 font-medium text-slate-900">9</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.10625 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Rozszerzone pasmo PMR (często dPMR/DMR Tier I lub analog)</td>
+              </tr>
+              <tr className="bg-slate-50/80">
+                <td className="py-2 px-3 font-medium text-slate-900">10</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.11875 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Rozszerzone pasmo PMR</td>
+              </tr>
+              <tr className="bg-slate-50/80">
+                <td className="py-2 px-3 font-medium text-slate-900">11</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.13125 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Rozszerzone pasmo PMR, łączność rodzinna</td>
+              </tr>
+              <tr className="bg-amber-50/40">
+                <td className="py-2 px-3 font-bold text-amber-700">12</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.14375 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3"><span className="inline-block rounded bg-amber-100 px-1.5 py-0.5 text-xs font-semibold text-amber-800">Zapasowy Testowy</span> Alternatywa dla kanału 2 w razie zakłóceń</td>
+              </tr>
+              <tr className="bg-slate-50/80">
+                <td className="py-2 px-3 font-medium text-slate-900">13</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.15625 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Rozszerzone pasmo PMR</td>
+              </tr>
+              <tr className="bg-slate-50/80">
+                <td className="py-2 px-3 font-medium text-slate-900">14</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.16875 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Rozszerzone pasmo PMR</td>
+              </tr>
+              <tr className="bg-slate-50/80">
+                <td className="py-2 px-3 font-medium text-slate-900">15</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.18125 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Rozszerzone pasmo PMR</td>
+              </tr>
+              <tr className="bg-slate-50/80">
+                <td className="py-2 px-3 font-medium text-slate-900">16</td>
+                <td className="py-2 px-3 font-mono font-medium text-slate-900">446.19375 MHz</td>
+                <td className="py-2 px-3 text-xs text-slate-500">12.5 kHz</td>
+                <td className="py-2 px-3">Rozszerzone pasmo PMR, koordynacja</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <ToneBox />
 
         <p className="mt-3 text-xs text-slate-600">

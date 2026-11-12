@@ -5,6 +5,7 @@
  */
 
 import React from 'react'
+import { Printer } from 'lucide-react'
 import ScrollToTopButton from '../components/ScrollToTopButton'
 
 /**
@@ -15,11 +16,22 @@ export default function TestsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       {/* Header */}
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">Testy łączności</h1>
-        <p className="text-slate-700 mt-1">
-          Zebrane terminy i kanały dla PMR446, CB oraz krótkofalarstwa (wymagana licencja). Krótka procedura i linki.
-        </p>
+      <header className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-slate-900">Testy łączności</h1>
+          <p className="text-slate-700 mt-1">
+            Zebrane terminy i kanały dla PMR446, CB oraz krótkofalarstwa (wymagana licencja). Krótka procedura i linki.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => window.print()}
+          className="print:hidden self-start sm:self-auto inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
+          aria-label="Drukuj harmonogram testów lub zapisz jako PDF"
+        >
+          <Printer size={16} aria-hidden="true" />
+          Drukuj / Zapisz PDF
+        </button>
       </header>
 
       {/* Schedule */}

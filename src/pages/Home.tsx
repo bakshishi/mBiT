@@ -53,6 +53,31 @@ export default function HomePage() {
                 Plan awaryjny
               </NavLink>
             </div>
+
+            {/* Szybka ściągawka kanałów */}
+            <div className="mt-6 rounded-lg border border-slate-200/90 bg-white/90 p-3.5 shadow-sm">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                Szybka ściągawka kanałów i parametrów
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                <div className="rounded bg-indigo-50/70 p-2 border border-indigo-100/80">
+                  <span className="font-semibold text-indigo-900 block">📡 Meshtastic EU_868</span>
+                  <span className="text-slate-600">Preset: <strong className="text-slate-800">LONG_FAST</strong></span>
+                  <span className="text-slate-600 block">869.525 MHz · Hop limit: 3</span>
+                </div>
+                <div className="rounded bg-amber-50/70 p-2 border border-amber-100/80">
+                  <span className="font-semibold text-amber-900 block">📻 PMR446 (UHF)</span>
+                  <span className="text-slate-600">Alarm: <strong className="text-slate-800">K-1</strong> (SOS)</span>
+                  <span className="text-slate-600 block">Testy: <strong className="text-slate-800">K-2</strong> (zapas: 12)</span>
+                </div>
+                <div className="rounded bg-slate-100/80 p-2 border border-slate-200">
+                  <span className="font-semibold text-slate-900 block">🚗 CB Radio (27 MHz)</span>
+                  <span className="text-slate-600">Trasa: <strong className="text-slate-800">K-19</strong> · Ratunek: <strong className="text-slate-800">K-9</strong></span>
+                  <span className="text-slate-600 block">Region/Baza: <strong className="text-slate-800">K-28</strong> (27.285)</span>
+                </div>
+              </div>
+            </div>
+
             <p className="mt-3 text-xs text-slate-600">
               EU: duty cycle LoRa 10%/h, domyślny preset: LONG_FAST (EU_868) i hop limit 3.
             </p>
