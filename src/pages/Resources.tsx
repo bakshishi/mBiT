@@ -125,8 +125,8 @@ export default function ResourcesPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       <header className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-900">Zasoby internetowe</h1>
-        <p className="text-slate-700 mt-1">
+        <h1 className="text-3xl font-display font-bold tracking-tight text-field-text">Zasoby internetowe</h1>
+        <p className="text-field-muted mt-1">
           Zbiór linków używanych w serwisie: dokumentacja, przewodniki, społeczności i łączność awaryjna.
         </p>
       </header>
@@ -134,24 +134,28 @@ export default function ResourcesPage() {
       <div className="grid gap-8 md:grid-cols-2">
         {groups.map((group) => (
           <section key={group.title} aria-labelledby={slug(group.title)}>
-            <h2 id={slug(group.title)} className="text-lg font-semibold text-slate-900">{group.title}</h2>
-            <ul className="mt-3 space-y-3">
+            <h2 id={slug(group.title)} className="text-lg font-display font-semibold text-field-text mb-3">
+              {group.title}
+            </h2>
+            <ul className="space-y-3">
               {group.items.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
+                    className="group block rounded-lg border border-field-border bg-field-card p-4 hover:border-signal-amber/60 hover:bg-field-ground/60 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-amber"
                     aria-label={`${item.name} — otwórz w nowej karcie`}
                   >
                     <div className="flex items-start gap-3">
-                      <span className="mt-0.5 text-[#667eea]">
+                      <span className="mt-0.5 text-signal-amber transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                         <ExternalLink size={18} aria-hidden="true" />
                       </span>
                       <div>
-                        <h3 className="font-medium text-slate-900 group-hover:underline">{item.name}</h3>
-                        <p className="text-sm text-slate-700 mt-0.5">{item.desc}</p>
+                        <h3 className="font-semibold text-field-text group-hover:text-signal-amber transition-colors">
+                          {item.name}
+                        </h3>
+                        <p className="text-sm text-field-muted mt-0.5">{item.desc}</p>
                       </div>
                     </div>
                   </a>

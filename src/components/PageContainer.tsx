@@ -26,14 +26,14 @@ export default function PageContainer({ title, intro, children }: PageContainerP
   return (
     <main className="mx-auto max-w-3xl px-4 sm:px-6 py-10">
       {title ? (
-        <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        <h1 className="text-3xl font-display font-bold tracking-tight text-field-text">
           {title}
         </h1>
       ) : null}
       {intro ? (
-        <p className="mt-4 text-base leading-7 text-slate-700 dark:text-slate-300">{intro}</p>
+        <p className="mt-4 text-base leading-7 text-field-muted">{intro}</p>
       ) : null}
-      <div className="mt-8 space-y-6 text-slate-700 dark:text-slate-300">
+      <div className="mt-8 space-y-6 text-field-muted">
         {children}
       </div>
     </main>

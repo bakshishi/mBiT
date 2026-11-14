@@ -14,13 +14,14 @@ const PLACEHOLDER_SRC =
   encodeURIComponent(
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice">' +
       '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
-      '<stop offset="0" stop-color="#667eea"/><stop offset="1" stop-color="#764ba2"/>' +
+      '<stop offset="0" stop-color="#f59e0b"/><stop offset="1" stop-color="#d97706"/>' +
       '</linearGradient></defs>' +
-      '<rect width="640" height="360" fill="url(#g)" opacity="0.18"/>' +
-      '<g fill="none" stroke="#667eea" stroke-width="3" stroke-linecap="round" opacity="0.6">' +
+      '<rect width="640" height="360" fill="#0d1526"/>' +
+      '<rect width="640" height="360" fill="url(#g)" opacity="0.12"/>' +
+      '<g fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" opacity="0.6">' +
       '<path d="M250 150c24 0 40 16 70 16s46-16 70-16"/>' +
       '<path d="M250 190c24 0 40 16 70 16s46-16 70-16"/>' +
-      '</g><circle cx="320" cy="236" r="9" fill="#667eea" opacity="0.7"/></svg>'
+      '</g><circle cx="320" cy="236" r="9" fill="#10b981" opacity="0.85"/></svg>'
   )
 
 /**

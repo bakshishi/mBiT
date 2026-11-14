@@ -33,8 +33,8 @@ export default function PMRPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       <header className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">PMR446 — Bez licencji</h1>
-        <p className="text-slate-700 mt-1">
+        <h1 className="text-3xl font-display font-bold tracking-tight text-field-text">PMR446 — Bez licencji</h1>
+        <p className="text-field-muted mt-1">
           446 MHz, 16 kanałów (12.5 kHz), 500 mW ERP, anteny niewymienne (UE). Krótkie i praktyczne wprowadzenie,
           zasady legalności, etykieta, tony CTCSS/DCS oraz rekomendowane kanały do zastosowań rodzinnych i awaryjnych.
         </p>

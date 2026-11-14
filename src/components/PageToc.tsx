@@ -87,9 +87,9 @@ export default function PageToc({ items, offset, ariaLabel = 'Spis treści' }: P
   return (
     <nav
       aria-label={ariaLabel}
-      className="mb-6 rounded-lg border border-slate-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 p-2 print:hidden"
+      className="mb-6 rounded-lg border border-field-border bg-field-card/90 backdrop-blur p-2 print:hidden shadow-sm"
     >
-      <ul className="flex flex-wrap gap-2">
+      <ul className="flex flex-wrap gap-1.5">
         {items.map((item) => (
           <li key={item.id}>
             {/* Using <a> for semantics; preventDefault in handler keeps HashRouter safe */}
@@ -102,7 +102,7 @@ export default function PageToc({ items, offset, ariaLabel = 'Spis treści' }: P
                   onActivate(e, item.id)
                 }
               }}
-              className="inline-flex items-center rounded-md px-3 py-1.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
+              className="inline-flex items-center rounded-md px-2.5 py-1 text-xs sm:text-sm font-medium text-field-muted hover:text-signal-amber hover:bg-field-recessed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal-amber transition-colors"
             >
               {item.label}
             </a>

@@ -8,6 +8,21 @@ module.exports = {
     },
     extend: {
       colors: {
+        'signal-amber': 'var(--signal-amber)',
+        'signal-amber-rich': 'var(--signal-amber-rich)',
+        'signal-amber-soft': 'var(--signal-amber-soft)',
+        'mesh-green': 'var(--mesh-green)',
+        'mesh-green-soft': 'var(--mesh-green-soft)',
+        'rf-cyan': 'var(--rf-cyan)',
+        'emergency-red': 'var(--emergency-red)',
+        'emergency-red-soft': 'var(--emergency-red-soft)',
+        'field-ground': 'var(--bg-ground)',
+        'field-card': 'var(--bg-card)',
+        'field-recessed': 'var(--bg-recessed)',
+        'field-text': 'var(--text-primary)',
+        'field-muted': 'var(--text-muted)',
+        'field-faint': 'var(--text-faint)',
+        'field-border': 'var(--hairline)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -63,6 +78,10 @@ module.exports = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      fontFamily: {
+        mono: ['JetBrains Mono', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+        display: ['Space Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
       },
       keyframes: {
         'accordion-down': {

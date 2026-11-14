@@ -26,18 +26,18 @@ export default function CopyField(props: { label?: string; command: string }) {
   }
 
   return (
-    <div className="flex items-stretch rounded-md border border-slate-300 overflow-hidden bg-white">
-      <code className="flex-1 px-3 py-2 text-sm text-slate-800 overflow-x-auto" aria-label="Polecenie CLI">
+    <div className="flex items-stretch rounded-md border border-field-border overflow-hidden bg-field-recessed">
+      <code className="flex-1 px-3 py-2 text-xs sm:text-sm font-mono text-signal-amber overflow-x-auto select-all" aria-label="Polecenie CLI">
         {command}
       </code>
       <button
         onClick={onCopy}
-        className="px-3 py-2 inline-flex items-center gap-2 text-sm bg-slate-100 hover:bg-slate-200 text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900"
+        className="px-3 py-2 inline-flex items-center gap-1.5 text-xs font-mono font-medium bg-field-card hover:bg-field-ground text-field-text border-l border-field-border focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-amber transition-colors"
         aria-live="polite"
         aria-label={label}
       >
-        <Copy size={16} aria-hidden="true" />
-        {copied ? 'Skopiowano' : 'Kopiuj'}
+        <Copy size={14} className={copied ? 'text-mesh-green' : 'text-signal-amber'} aria-hidden="true" />
+        {copied ? 'Skopiowano!' : 'Kopiuj'}
       </button>
     </div>
   )

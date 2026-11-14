@@ -8,16 +8,27 @@
       name="description"
       content="Wiedza i praktyka o łączności awaryjnej w regionie Bydgoszczy i Torunia: Meshtastic, MeshCore, Reticulum, PMR446, CB i krótkofalarstwo. Ustawienia, dobre praktyki, plan awaryjny i testy łączności."
     />
-    <meta name="theme-color" content="#667eea" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8fafc" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#070a12" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pl_PL" />
-    <meta property="og:title" content="mBiT.pm — Mesh Bydgoszcz i Toruń" />
+    <meta property="og:title" content="mBiT.pm — Mesh Bydgoszcz i Toruń | Łączność Awaryjna" />
     <meta
       property="og:description"
-      content="Connectivity Without Limits — łączność awaryjna: Meshtastic, MeshCore, Reticulum, PMR446, CB."
+      content="Tactical RF &amp; Mesh — łączność awaryjna w regionie Bydgoszcz i Toruń: Meshtastic, MeshCore, Reticulum, PMR446, CB i plan kryzysowy."
     />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link href="main.css" rel="stylesheet" />
+    <script>
+      try {
+        const t = localStorage.getItem('mbit_theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <noscript>

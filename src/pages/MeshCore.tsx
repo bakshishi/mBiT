@@ -72,51 +72,51 @@ export default function MeshCorePage() {
         </Section>
 
         <Section id="hashmode" title="Path Hash Mode — dlaczego i jak włączyć tryb 2 bajtów?">
-          <div className="space-y-4 text-slate-700 text-sm">
+          <div className="space-y-4 text-field-muted text-sm">
             <p>
               W sieci MeshCore każdy repeater dopisuje do nagłówka przesyłanego pakietu skrót (prefiks) swojego klucza
               publicznego, tworząc zapisaną ścieżkę (path hash). Pozwala to na śledzenie trasy pakietów na mapach (np.
               MeshMapper) oraz zapobiega powtórnym retransmisjom.
             </p>
 
-            <div className="rounded-lg border border-indigo-100 bg-indigo-50/60 p-4">
-              <h4 className="font-semibold text-indigo-950 mb-1">Dlaczego społeczność oczekuje trybu 2 bajtów?</h4>
-              <ul className="list-disc pl-5 space-y-1 text-slate-700">
+            <div className="rounded-lg border border-rf-cyan/30 bg-rf-cyan/5 p-4 text-field-text">
+              <h4 className="font-display font-semibold text-rf-cyan mb-1">Dlaczego społeczność oczekuje trybu 2 bajtów?</h4>
+              <ul className="list-disc pl-5 space-y-1 text-field-muted">
                 <li>
-                  <strong>Problem 1 bajta (1-byte hash):</strong> Domyślny w starszych wersjach tryb 1-bajtowy dawał zaledwie 254
+                  <strong className="text-field-text">Problem 1 bajta (1-byte hash):</strong> Domyślny w starszych wersjach tryb 1-bajtowy dawał zaledwie 254
                   unikalne identyfikatory. W rozwijających się sieciach prowadzi to do częstych <em>kolizji adresów</em> (dwa różne
                   węzły w okolicy mają ten sam hash, co uniemożliwia poprawne mapowanie tras).
                 </li>
                 <li>
-                  <strong>Tryb 2 bajtów (2-byte hash / Mode 1):</strong> Zwiększa przestrzeń identyfikatorów do <strong>65 536</strong>,
+                  <strong className="text-field-text">Tryb 2 bajtów (2-byte hash / Mode 1):</strong> Zwiększa przestrzeń identyfikatorów do <strong>65 536</strong>,
                   praktycznie eliminując kolizje w sieci regionalnej.
                 </li>
                 <li>
-                  <strong>Limit skoków (hops):</strong> Pole ścieżki ma limit 64 bajtów, co w trybie 2-bajtowym pozwala na aż <strong>32 przeskoki</strong> — w zupełności wystarczające dla topologii regionalnej.
+                  <strong className="text-field-text">Limit skoków (hops):</strong> Pole ścieżki ma limit 64 bajtów, co w trybie 2-bajtowym pozwala na aż <strong>32 przeskoki</strong> — w zupełności wystarczające dla topologii regionalnej.
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-lg border border-amber-200 bg-amber-50/70 p-3 text-xs text-amber-900">
+            <div className="rounded-lg border border-signal-amber/40 bg-signal-amber-soft p-3 text-xs text-field-text">
               ⚠️ <strong>Wymaganie firmware:</strong> Obsługa trybu 2-bajtowego wymaga oprogramowania układowego w wersji <strong>1.14.1 lub nowszej</strong>. Starsze wersje firmware nie rozpoznają pakietów wielobajtowych i mogą je ignorować.
             </div>
 
             <div>
-              <h4 className="font-semibold text-slate-900 mb-2">Instrukcja włączenia trybu 2-bajtowego:</h4>
+              <h4 className="font-display font-semibold text-field-text mb-2">Instrukcja włączenia trybu 2-bajtowego:</h4>
               <div className="space-y-3">
                 <div>
-                  <span className="font-medium text-slate-800 text-xs block mb-1">1. Konsola szeregowa / CLI (port USB lub remote admin):</span>
+                  <span className="font-mono text-xs uppercase tracking-wider text-field-text block mb-1">1. Konsola szeregowa / CLI (port USB lub remote admin):</span>
                   <div className="space-y-2">
-                    <p className="text-xs text-slate-600">Sprawdzenie aktualnego trybu:</p>
+                    <p className="text-xs text-field-muted">Sprawdzenie aktualnego trybu:</p>
                     <CopyField label="Kopiuj polecenie sprawdzające" command="get path.hash.mode" />
-                    <p className="text-xs text-slate-600">Ustawienie trybu 2 bajtów (wartość <code>1</code> = 2 bajty; <code>0</code> = 1 bajt, <code>2</code> = 3 bajty):</p>
+                    <p className="text-xs text-field-muted">Ustawienie trybu 2 bajtów (wartość <code>1</code> = 2 bajty; <code>0</code> = 1 bajt, <code>2</code> = 3 bajty):</p>
                     <CopyField label="Kopiuj polecenie ustawiające 2 bajty" command="set path.hash.mode 1" />
                   </div>
                 </div>
 
                 <div className="mt-3">
-                  <span className="font-medium text-slate-800 text-xs block mb-1">2. W aplikacji mobilnej (MeshCore Companion App):</span>
-                  <p className="text-xs text-slate-600">
+                  <span className="font-mono text-xs uppercase tracking-wider text-field-text block mb-1">2. W aplikacji mobilnej (MeshCore Companion App):</span>
+                  <p className="text-xs text-field-muted">
                     Połącz się z węzłem przez Bluetooth ➔ wejdź w <strong>Settings</strong> (Ustawienia) ➔ <strong>Radio / Network Settings</strong> ➔ znajdź opcję <strong>Path Hash Mode</strong> ➔ wybierz <strong>2 bytes (Mode 1)</strong> i zatwierdź (Save/Apply).
                   </p>
                 </div>
@@ -158,10 +158,10 @@ export default function MeshCorePage() {
         </Section>
 
         <Section id="links" title="Linki i zasoby">
-          <ul className="list-disc pl-5">
-            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://lorameshcore.pl">lorameshcore.pl — portal PL</a></li>
-            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://diver.net.pl/meshcore">diver.net.pl/meshcore — przewodniki</a></li>
-            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://github.com/meshcore">MeshCore — GitHub</a></li>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://lorameshcore.pl">lorameshcore.pl — portal PL</a></li>
+            <li><a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://diver.net.pl/meshcore">diver.net.pl/meshcore — przewodniki</a></li>
+            <li><a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://github.com/meshcore">MeshCore — GitHub</a></li>
           </ul>
         </Section>
       </div>

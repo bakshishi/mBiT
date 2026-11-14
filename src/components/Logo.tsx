@@ -7,56 +7,50 @@ import React from 'react'
 
 /**
  * Logo
- * Renders an inline SVG logo using brand colors (#667eea, #764ba2) with a hexagon and mesh waves.
+ * Renders an inline SVG logo using Tactical RF palette (Signal Amber + Mesh Green node).
  */
 export default function Logo(props: { className?: string; title?: string }) {
   const { className, title = 'Mesh Bydgoszcz i Toruń' } = props
   return (
     <span className={className} aria-label={title} role="img">
       <svg
-        width="28"
-        height="28"
+        width="30"
+        height="30"
         viewBox="0 0 64 64"
         aria-hidden="true"
         focusable="false"
       >
-        <defs>
-          <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0%" stopColor="#667eea" />
-            <stop offset="100%" stopColor="#764ba2" />
-          </linearGradient>
-        </defs>
+        {/* Tactical Outer Hexagon */}
         <polygon
           points="32,4 56,16 56,48 32,60 8,48 8,16"
-          fill="url(#g)"
-          opacity="0.25"
-          stroke="url(#g)"
-          strokeWidth="2"
+          fill="currentColor"
+          className="text-signal-amber fill-signal-amber/10 stroke-signal-amber"
+          strokeWidth="2.5"
         />
-        {/* Inner hex */}
+        {/* Inner RF geometric mesh */}
         <polygon
-          points="32,12 50,21 50,43 32,52 14,43 14,21"
+          points="32,13 49,21 49,43 32,51 15,43 15,21"
           fill="none"
-          stroke="url(#g)"
-          strokeWidth="2"
-          opacity="0.7"
+          className="stroke-signal-amber/40"
+          strokeWidth="1.5"
         />
-        {/* Waves */}
+        {/* Radio Waves */}
         <path
-          d="M24 24c3 0 5 2 8 2s5-2 8-2"
-          stroke="#667eea"
+          d="M23 25c3-1.5 6-1.5 9 0s6 1.5 9 0"
+          className="stroke-signal-amber"
           strokeWidth="2"
           fill="none"
           strokeLinecap="round"
         />
         <path
-          d="M24 30c3 0 5 2 8 2s5-2 8-2"
-          stroke="#764ba2"
+          d="M20 31c4-2 8-2 12 0s8 2 12 0"
+          className="stroke-signal-amber/80"
           strokeWidth="2"
           fill="none"
           strokeLinecap="round"
         />
-        <circle cx="32" cy="34" r="3" fill="#667eea" />
+        {/* Active Node Core */}
+        <circle cx="32" cy="40" r="3.5" className="fill-mesh-green stroke-field-card" strokeWidth="1" />
       </svg>
     </span>
   )

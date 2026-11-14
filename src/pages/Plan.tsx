@@ -43,15 +43,15 @@ export default function PlanPage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       <header className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Plan Awaryjny — Multi‑System</h1>
-          <p className="text-slate-700 mt-1">
+          <h1 className="text-2xl sm:text-3xl font-bold font-display text-field-text tracking-tight">Plan Awaryjny — Multi‑System</h1>
+          <p className="text-field-muted mt-1 text-sm sm:text-base">
             Praktyczny plan łączności awaryjnej: poziomy (Tier 1–3), sprzęt, zasilanie, procedury, testy i checklisty.
           </p>
         </div>
         <button
           type="button"
           onClick={() => window.print()}
-          className="print:hidden self-start sm:self-auto inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#667eea]"
+          className="print:hidden self-start sm:self-auto inline-flex items-center gap-1.5 rounded-md border border-field-border bg-field-card px-3 py-1.5 text-xs sm:text-sm font-medium text-field-text shadow-sm hover:bg-field-recessed hover:text-signal-amber focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-amber transition-colors"
           aria-label="Drukuj plan awaryjny lub zapisz jako PDF"
         >
           <Printer size={16} aria-hidden="true" />

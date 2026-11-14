@@ -92,14 +92,14 @@ export default function ReticulumPage() {
         </Section>
 
         <Section id="links" title="Linki i zasoby">
-          <ul className="list-disc pl-5">
+          <ul className="list-disc pl-5 space-y-1">
             <li>
-              <a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://reticulum.network">
+              <a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://reticulum.network">
                 reticulum.network — oficjalna dokumentacja
               </a>
             </li>
             <li>
-              <a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://unsigned.io/rnode/">
+              <a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://unsigned.io/rnode/">
                 unsigned.io/rnode — RNode
               </a>
             </li>

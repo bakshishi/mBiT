@@ -18,7 +18,7 @@ import RouteChangeScroll from './RouteChangeScroll'
  */
 export default function Layout() {
   return (
-    <div className="min-h-dvh flex flex-col bg-slate-50 text-slate-900">
+    <div className="min-h-dvh flex flex-col bg-field-ground text-field-text transition-colors duration-200">
       <SkipLink />
 
       {/* Reset scroll position and focus when route changes */}

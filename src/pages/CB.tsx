@@ -36,8 +36,8 @@ export default function CBPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
       <header className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-900">CB Radio — poradnik dla początkujących</h1>
-        <p className="mt-2 text-slate-700 max-w-3xl">
+        <h1 className="text-3xl font-display font-bold tracking-tight text-field-text">CB Radio — poradnik dla początkujących</h1>
+        <p className="mt-2 text-field-muted max-w-3xl">
           Pasmo obywatelskie 27 MHz bez licencji. 40 kanałów (CEPT), AM/FM oraz SSB (do 12 W PEP).
           Prosta obsługa, niski koszt wejścia i realne zastosowania w codziennej i awaryjnej łączności.
         </p>

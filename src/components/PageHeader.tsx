@@ -24,9 +24,9 @@ export interface PageHeaderProps {
  */
 export default function PageHeader({ title, subtitle, children }: PageHeaderProps) {
   return (
-    <header className="mb-6">
-      <h1 className="text-2xl font-bold text-slate-900">{title}</h1>
-      {subtitle ? <p className="text-slate-700 mt-1">{subtitle}</p> : null}
+    <header className="mb-6 border-b border-field-border pb-4">
+      <h1 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-field-text">{title}</h1>
+      {subtitle ? <p className="text-field-muted mt-1 text-sm sm:text-base">{subtitle}</p> : null}
       {children ? <div className="mt-3">{children}</div> : null}
     </header>
   )

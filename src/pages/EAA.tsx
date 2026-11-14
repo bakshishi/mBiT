@@ -35,7 +35,7 @@ export default function EAAPage() {
         <p>
           W sprawach związanych z EAA prosimy o kontakt:{' '}
           <a
-            className="text-indigo-700 dark:text-indigo-300 underline underline-offset-2"
+            className="text-signal-amber hover:underline underline underline-offset-2"
             href="mailto:kontakt@mbit.pm"
           >
             kontakt@mbit.pm

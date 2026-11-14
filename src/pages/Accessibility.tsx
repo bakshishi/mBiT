@@ -36,7 +36,7 @@ export default function AccessibilityPage() {
         <p>
           Jeśli napotkasz bariery dostępności lub potrzebujesz alternatywnego formatu treści, napisz do nas:{' '}
           <a
-            className="text-indigo-700 dark:text-indigo-300 underline underline-offset-2"
+            className="text-signal-amber hover:underline underline underline-offset-2"
             href="mailto:kontakt@mbit.pm"
           >
             kontakt@mbit.pm

@@ -57,9 +57,9 @@ export default function ScrollToTopButton({ threshold = 300 }: ScrollToTopButton
       type="button"
       aria-label="Przewiń do góry"
       onClick={handleClick}
-      className="fixed bottom-6 right-6 z-50 print:hidden inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white shadow-lg transition hover:from-indigo-500 hover:to-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
+      className="fixed bottom-6 right-6 z-50 print:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-signal-amber text-slate-950 shadow-md transition hover:bg-signal-amber-rich focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal-amber focus-visible:ring-offset-2"
     >
-      <ArrowUp className="h-5 w-5" aria-hidden="true" />
+      <ArrowUp className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
     </button>
   )
 }

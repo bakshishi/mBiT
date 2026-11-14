@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           Serwis prowadzi społeczność mBiT.pm (Mesh Bydgoszcz i Toruń) — projekt niekomercyjny. Kontakt w każdej sprawie dotyczącej danych osobowych:
           <br />
           <a
-            className="text-indigo-700 dark:text-indigo-300 underline underline-offset-2"
+            className="text-signal-amber hover:underline underline underline-offset-2"
             href="mailto:kontakt@mbit.pm"
           >
             kontakt@mbit.pm
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
         <p>
           Wnioski dotyczące praw prosimy kierować na adres:{' '}
           <a
-            className="text-indigo-700 dark:text-indigo-300 underline underline-offset-2"
+            className="text-signal-amber hover:underline underline underline-offset-2"
             href="mailto:kontakt@mbit.pm"
           >
             kontakt@mbit.pm

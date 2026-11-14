@@ -147,12 +147,12 @@ export default function MeshtasticPage() {
         </Section>
 
         <Section id="links" title="Linki i zasoby">
-          <ul className="list-disc pl-5">
-            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://meshtastic.org/">Meshtastic — oficjalna strona</a></li>
-            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://meshtastic.org/docs/">Meshtastic — dokumentacja</a></li>
-            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://meshtastic.org/blog/why-your-mesh-should-switch-from-longfast/">Blog: LongFast vs MediumFast</a></li>
-            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://lorastats.pl/">lorastats.pl — statystyki</a></li>
-            <li><a className="text-indigo-700 underline" target="_blank" rel="noopener noreferrer" href="https://meshmap.net/">meshmap.net — mapa sieci</a></li>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://meshtastic.org/">Meshtastic — oficjalna strona</a></li>
+            <li><a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://meshtastic.org/docs/">Meshtastic — dokumentacja</a></li>
+            <li><a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://meshtastic.org/blog/why-your-mesh-should-switch-from-longfast/">Blog: LongFast vs MediumFast</a></li>
+            <li><a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://lorastats.pl/">lorastats.pl — statystyki</a></li>
+            <li><a className="text-signal-amber hover:underline" target="_blank" rel="noopener noreferrer" href="https://meshmap.net/">meshmap.net — mapa sieci</a></li>
           </ul>
         </Section>
       </div>
