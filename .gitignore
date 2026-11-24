@@ -8,6 +8,7 @@ dist/
 *.log
 npm-debug.log*
 *.tsbuildinfo
+.audit/
 
 # Środowisko lokalne
 .env
