@@ -50,6 +50,11 @@ export default function Footer() {
                 Plan Awaryjny (Tier 1–3)
               </NavLink>
             </li>
+            <li>
+              <NavLink className="text-field-muted hover:text-signal-amber transition-colors" to="/sciagawka">
+                Ściągawka polowa A4 (PDF)
+              </NavLink>
+            </li>
           </ul>
         </section>
 

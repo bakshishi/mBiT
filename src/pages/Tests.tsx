@@ -5,7 +5,8 @@
  */
 
 import React from 'react'
-import { Printer } from 'lucide-react'
+import { NavLink } from 'react-router'
+import { FileText, Printer } from 'lucide-react'
 import ScrollToTopButton from '../components/ScrollToTopButton'
 
 /**
@@ -23,15 +24,24 @@ export default function TestsPage() {
             Harmonogramy, kanały wywoławcze PMR446, CB Radio i pasma krótkofalarskie (SP2).
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => window.print()}
-          className="print:hidden self-start sm:self-auto inline-flex items-center gap-1.5 rounded-md border border-field-border bg-field-card px-3 py-1.5 text-xs sm:text-sm font-medium text-field-text shadow-sm hover:bg-field-recessed hover:text-signal-amber focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-amber transition-colors"
-          aria-label="Drukuj harmonogram testów lub zapisz jako PDF"
-        >
-          <Printer size={16} aria-hidden="true" />
-          Drukuj / Zapisz PDF
-        </button>
+        <div className="print:hidden flex flex-wrap items-center gap-2 self-start sm:self-auto">
+          <NavLink
+            to="/sciagawka"
+            className="inline-flex items-center gap-1.5 rounded-md border border-field-border bg-field-card px-3 py-1.5 text-xs sm:text-sm font-medium text-field-text shadow-sm hover:bg-field-recessed hover:text-signal-amber focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-amber transition-colors"
+          >
+            <FileText size={16} aria-hidden="true" />
+            Ściągawka A4
+          </NavLink>
+          <button
+            type="button"
+            onClick={() => window.print()}
+            className="inline-flex items-center gap-1.5 rounded-md border border-field-border bg-field-card px-3 py-1.5 text-xs sm:text-sm font-medium text-field-text shadow-sm hover:bg-field-recessed hover:text-signal-amber focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-amber transition-colors"
+            aria-label="Drukuj harmonogram testów lub zapisz jako PDF"
+          >
+            <Printer size={16} aria-hidden="true" />
+            Drukuj / Zapisz PDF
+          </button>
+        </div>
       </header>
 
       {/* Schedule */}

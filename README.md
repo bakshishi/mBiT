@@ -7,7 +7,7 @@ Motto: **Connectivity Without Limits**
 ## Technologie
 
 - React 18 + TypeScript, react-router 7 (`HashRouter`)
-- Tailwind CSS (+ komponenty shadcn/Radix w `src/components/ui` — obecnie nieużywane przez żadną stronę)
+- Tailwind CSS + tokeny systemu Tactical RF (`src/shadcn.css`)
 - lucide-react (ikony)
 - esbuild jako bundler (`scripts/build.mjs`)
 - Hosting: GitHub Pages (workflow `.github/workflows/pages.yml`)
@@ -32,12 +32,12 @@ index.html              szablon strony (lang="pl", meta, favicon)
 public/                 zasoby statyczne kopiowane do dist/ (images/*.webp, favicon.svg, robots.txt)
 scripts/build.mjs       build / serwer deweloperski (esbuild + Tailwind)
 src/
-  App.tsx               routing (HashRouter, 14 stron + 404)
+  App.tsx               routing (HashRouter, 15 stron + 404)
   main.tsx              punkt wejścia
   components/           Layout, Header, Footer, CookieBanner, SmartImage, Section, PageToc, ...
-  components/ui/        komponenty shadcn (zob. uwaga wyżej; można usunąć wraz z zależnościami Radix)
   pages/                strony główne: Home, Meshtastic, MeshCore, Reticulum, PMR446, CB,
-                        Systems, Plan, Resources, Tests, Privacy, Cookies, Accessibility, EAA, NotFound
+                        Systems, Plan, Resources, Tests, CheatSheet, Privacy, Cookies,
+                        Accessibility, EAA, NotFound
   pages/cb|plan|pmr|systems/   podsekcje dużych stron
 .github/workflows/
   pages.yml             build i wdrożenie na GitHub Pages (push do main)
@@ -48,9 +48,18 @@ src/
 
 Obrazy trzymamy w `public/images/` (format WebP) i odwołujemy się do nich ścieżką względną, np. `images/meshtastic.webp` (bez wiodącego `/`, żeby działały na GitHub Pages pod podścieżką). Komponent `SmartImage` przy błędzie ładowania pokazuje lokalny placeholder SVG — nie są wykonywane żadne zapytania do zewnętrznych serwisów.
 
+## Druk
+
+- `/sciagawka` — jednostronicowa karta polowa A4: kanały SOS, tabele PMR446/CB, presety mesh,
+  procedura wywołania pomocy, kody Q i alfabet fonetyczny.
+- Druk przez `window.print()` (A4, skala 100%; A5 — skala ok. 71%). Style `@media print`
+  w `src/shadcn.css` wymuszają jasną paletę i ukrywają nawigację, stopkę oraz baner cookies.
+
 ## Marka
 
-- Gradient główny: `#667eea` → `#764ba2`
+- Akcent główny: Signal Amber (`#d97706` w trybie jasnym, `#f59e0b` w ciemnym)
+- Status sieci: Mesh Green; dane techniczne: RF Cyan; alarmy: Emergency Red
+- Pełne tokeny i zasady: `DESIGN.md`
 
 ## Dostępność i prywatność
 

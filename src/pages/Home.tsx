@@ -16,7 +16,8 @@ import {
   ArrowRight,
   Activity,
   Layers,
-  Cpu
+  Cpu,
+  Printer
 } from 'lucide-react'
 import SmartImage from '../components/SmartImage'
 
@@ -57,6 +58,13 @@ export default function HomePage() {
               >
                 <Network size={16} aria-hidden="true" />
                 <span>Meshtastic EU_868</span>
+              </NavLink>
+              <NavLink
+                to="/sciagawka"
+                className="inline-flex items-center gap-2 rounded-md border border-field-border bg-field-card px-5 py-2.5 text-field-text font-medium text-sm hover:border-signal-amber/50 hover:bg-field-recessed transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-amber"
+              >
+                <Printer size={16} aria-hidden="true" />
+                <span>Ściągawka A4</span>
               </NavLink>
             </div>
 

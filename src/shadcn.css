@@ -147,3 +147,108 @@ html > body * {
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--border)) transparent;
 }
+
+/* ---------------------------------------------------------------------------
+   Print: field-ready output (A4)
+   Forces the light "field paper" palette even when the site runs in dark mode,
+   so emergency procedures stay readable and ink-friendly on paper.
+--------------------------------------------------------------------------- */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  :root,
+  .dark {
+    --signal-amber: #92400e;
+    --signal-amber-rich: #78350f;
+    --signal-amber-soft: #fffbeb;
+    --mesh-green: #065f46;
+    --mesh-green-soft: #ecfdf5;
+    --rf-cyan: #155e75;
+    --emergency-red: #991b1b;
+    --emergency-red-soft: #fef2f2;
+    --bg-ground: #ffffff;
+    --bg-card: #ffffff;
+    --bg-recessed: #ffffff;
+    --text-primary: #000000;
+    --text-muted: #1f2937;
+    --text-faint: #374151;
+    --hairline: #9ca3af;
+    --border: 0 0% 70%;
+  }
+
+  html {
+    font-size: 11pt;
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Cheat sheet: two balanced columns on a single A4 page */
+  .cheat-sheet {
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cheat-grid {
+    display: block !important;
+    column-count: 2;
+    column-gap: 5mm;
+  }
+
+  .cheat-panel {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin: 0 0 2.5mm;
+    padding: 1.8mm !important;
+    background: #ffffff !important;
+    border: 0.3pt solid #9ca3af !important;
+    border-radius: 1px !important;
+  }
+
+  .cheat-sheet * {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .cheat-sheet a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .cheat-sheet table {
+    font-size: 7.5pt;
+  }
+
+  .cheat-sheet th,
+  .cheat-sheet td {
+    padding: 0.4mm 0.8mm !important;
+  }
+
+  .cheat-sheet h3 {
+    margin-bottom: 1mm !important;
+  }
+
+  .cheat-sheet ul,
+  .cheat-sheet ol,
+  .cheat-sheet dl {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .cheat-sheet li,
+  .cheat-sheet tr {
+    break-inside: avoid;
+  }
+}

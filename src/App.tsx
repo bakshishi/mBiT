@@ -20,6 +20,7 @@ import AccessibilityPage from './pages/Accessibility'
 import EAAPage from './pages/EAA'
 import ResourcesPage from './pages/Resources'
 import TestsPage from './pages/Tests'
+import CheatSheetPage from './pages/CheatSheet'
 import NotFoundPage from './pages/NotFound'
 
 /**
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="plan" element={<PlanPage />} />
           <Route path="resources" element={<ResourcesPage />} />
           <Route path="tests" element={<TestsPage />} />
+          <Route path="sciagawka" element={<CheatSheetPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="cookies" element={<CookiesPage />} />
           <Route path="accessibility" element={<AccessibilityPage />} />

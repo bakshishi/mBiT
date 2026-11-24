@@ -34,6 +34,7 @@ export default function Header() {
     { to: '/systems', label: 'Systemy' },
     { to: '/resources', label: 'Zasoby' },
     { to: '/tests', label: 'Testy' },
+    { to: '/sciagawka', label: 'Ściągawka' },
   ]
 
   const linkBase =
