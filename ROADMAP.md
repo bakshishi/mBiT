@@ -10,6 +10,7 @@ Status projektu: **Baza uporządkowana, scalona z gałęziami audytu i wypchnię
 - [ ] **Weryfikacja GitHub Pages**:
   - Sprawdzenie zakładki *Actions* na GitHubie (`bakshishi/mBiT`) po ostatnim pushu commitów.
   - Potwierdzenie poprawnego zaserwowania odświeżonego artefaktu pod adresem strony (`https://bakshishi.github.io/mBiT/` lub domeną własną).
+  - **Ustalenie 25.11.2026:** workflow „Deploy to GitHub Pages” kończy się sukcesem, ale Pages ma źródło ustawione na gałąź (Jekyll), przez co `main.js`, `main.css`, obrazy, manifest i `sw.js` zwracają 404. Wymagana zmiana: *Settings → Pages → Source = GitHub Actions* i ponowne uruchomienie workflow.
 - [ ] **Audyt wizualny i mobilny (Live Preview)**:
   - Uruchomienie lokalnego środowiska deweloperskiego (`npm run dev`).
   - Przetestowanie nawigacji na urządzeniach mobilnych (menu hamburger, rozmiary dotykowe przycisków, czytelność fontów).

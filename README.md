@@ -86,6 +86,10 @@ Obrazy trzymamy w `public/images/` (format WebP) i odwołujemy się do nich ści
 
 Push do `main` uruchamia workflow `pages.yml` (Node 20, `npm run build`, publikacja `dist/` na GitHub Pages).
 
+Ważne: w **Settings → Pages → Build and deployment → Source** musi być wybrane **GitHub Actions**.
+Przy źródle „Deploy from a branch” GitHub publikuje katalog repozytorium (bez generowanego `dist/`):
+`index.html` działa, ale `main.js`, `main.css`, obrazy, manifest i `sw.js` zwracają 404.
+
 Uwagi:
 
 - Na GitHub Pages nie można ustawiać własnych nagłówków HTTP (CSP, HSTS itp.). Jeśli będą potrzebne, wymagają własnego serwera lub CDN przed stroną.

@@ -90,3 +90,5 @@ Jeśli posiadasz własny serwer:
 2. Sprawdź, czy index.html znajduje się w katalogu głównym
 3. Przejrzyj dzienniki błędów na platformie hostingowej
 4. Upewnij się, że wszystkie pliki zostały poprawnie przesłane
+5. GitHub Pages: jeśli index.html działa, ale main.js/main.css i obrazy zwracają 404, ustaw
+   Settings → Pages → Build and deployment → Source = "GitHub Actions" (nie "Deploy from a branch").
