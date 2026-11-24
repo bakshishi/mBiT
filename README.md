@@ -10,6 +10,7 @@ Motto: **Connectivity Without Limits**
 - Tailwind CSS + tokeny systemu Tactical RF (`src/shadcn.css`)
 - lucide-react (ikony)
 - esbuild jako bundler (`scripts/build.mjs`)
+- PWA: manifest + service worker (tryb offline po pierwszej wizycie)
 - Hosting: GitHub Pages (workflow `.github/workflows/pages.yml`)
 
 ## Uruchomienie
@@ -29,7 +30,8 @@ npm run typecheck  # sprawdzenie typów (tsc --noEmit)
 
 ```
 index.html              szablon strony (lang="pl", meta, favicon)
-public/                 zasoby statyczne kopiowane do dist/ (images/*.webp, favicon.svg, robots.txt)
+public/                 zasoby statyczne kopiowane do dist/ (images/*.webp, icons/*.png, favicon.svg,
+                        manifest.webmanifest, sw.js, robots.txt)
 scripts/build.mjs       build / serwer deweloperski (esbuild + Tailwind)
 src/
   App.tsx               routing (HashRouter, 15 stron + 404)
@@ -54,6 +56,19 @@ Obrazy trzymamy w `public/images/` (format WebP) i odwołujemy się do nich ści
   procedura wywołania pomocy, kody Q i alfabet fonetyczny.
 - Druk przez `window.print()` (A4, skala 100%; A5 — skala ok. 71%). Style `@media print`
   w `src/shadcn.css` wymuszają jasną paletę i ukrywają nawigację, stopkę oraz baner cookies.
+
+## PWA / tryb offline
+
+- `public/manifest.webmanifest` definiuje nazwę, ikony 192/512 px, skróty (Plan, Ściągawka, Testy)
+  oraz tryb `standalone`.
+- `public/sw.js` po pierwszej wizycie zapisuje app shell, style, skrypt i wszystkie obrazy.
+  Nawigacje działają w strategii network-first z fallbackiem do cache, a statyczne zasoby
+  w stale-while-revalidate. Dzięki temu strona i wszystkie trasy hash działają bez Internetu.
+- Rejestracja odbywa się tylko w buildzie produkcyjnym (flaga `__PROD__` z `scripts/build.mjs`);
+  serwer deweloperski nie udostępnia plików z `public/`.
+- Przy każdym wydaniu zmień `CACHE_VERSION` w `public/sw.js`, aby unieważnić stary cache.
+- Service worker wymaga HTTPS (GitHub Pages zapewnia) i działa zarówno w katalogu głównym,
+  jak i pod podścieżką `/mBiT/` — wszystkie ścieżki w manifeście i cache są względne.
 
 ## Marka
 

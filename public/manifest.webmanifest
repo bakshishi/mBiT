@@ -1,0 +1,53 @@
+{
+  "id": "./",
+  "name": "mBiT.pm — Łączność awaryjna Bydgoszcz i Toruń",
+  "short_name": "mBiT.pm",
+  "description": "Terenowy przewodnik łączności kryzysowej: Meshtastic, MeshCore, Reticulum, PMR446, CB, plan awaryjny i testy.",
+  "lang": "pl",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f8fafc",
+  "theme_color": "#070a12",
+  "categories": ["utilities", "education", "navigation"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Plan awaryjny",
+      "short_name": "Plan",
+      "description": "Procedury łączności kryzysowej Tier 1–3",
+      "url": "./#/plan",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ściągawka A4",
+      "short_name": "Ściągawka",
+      "description": "Kanały SOS, częstotliwości i procedura wywołania",
+      "url": "./#/sciagawka",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Testy łączności",
+      "short_name": "Testy",
+      "description": "Harmonogram testów i kanały wywoławcze",
+      "url": "./#/tests",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Plan Rozwoju i Działań dla Serwisu mBiT.pm (Mesh Bydgoszcz i Toruń)
 
-Data aktualizacji: 24 listopada 2026 r.  
+Data aktualizacji: 25 listopada 2026 r.  
 Status projektu: **Baza uporządkowana, scalona z gałęziami audytu i wypchnięta na GitHub (`main`).**
 
 ---
@@ -50,8 +50,10 @@ Strona nosi nazwę **mBiT** (Mesh Bydgoszcz i Toruń), dlatego kluczowe jest uzu
 
 ## ⚡ Faza 4: Funkcje zaawansowane dla łączności kryzysowej
 
-- [ ] **Tryb Offline / PWA (Progressive Web App)**:
-  - Dodanie prostego Service Workera i manifestu PWA, aby strona mogła zostać zainstalowana na telefonie i działać w 100% offline w sytuacji braku Internetu i blackoutu sieci komórkowej.
+- [x] **Tryb Offline / PWA (Progressive Web App)** — ukończone 25.11.2026:
+  - Manifest (`public/manifest.webmanifest`) z ikonami 192/512 px, skrótami do Planu, Ściągawki i Testów oraz trybem `standalone`.
+  - Service worker (`public/sw.js`) precache'uje app shell i obrazy; nawigacje działają network-first z fallbackiem offline, a statyczne zasoby w stale-while-revalidate.
+  - Rejestracja tylko w buildzie produkcyjnym; sprawdzono instalowalność (brak błędów), działanie offline po zatrzymaniu serwera oraz poprawność pod podścieżką `/mBiT/`.
 - [x] **Ściągawka do druku (PDF / Pocket Guide)** — ukończone 24.11.2026:
   - Jednostronicowa karta A4/A5 dostępna pod `/sciagawka`: tabele PMR446 i CB, kanały ratunkowe, presety mesh, procedura wywołania SOS, kody Q i alfabet fonetyczny.
   - Druk przez `window.print()`; style `@media print` wymuszają jasną paletę i ukrywają nawigację, stopkę oraz baner cookies.

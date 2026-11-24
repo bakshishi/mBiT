@@ -37,6 +37,9 @@ const esbuildOpts = {
   minify: isProd,
   treeShaking: true,
   jsx: 'automatic',
+  define: {
+    __PROD__: JSON.stringify(isProd),
+  },
   banner: isProd ? {} : { js: devReloadBanner },
   loader: {
     '.html': 'copy',

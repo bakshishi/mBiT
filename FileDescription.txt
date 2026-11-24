@@ -4,11 +4,12 @@
 │   ├── main.tsx     → Punkt wejścia aplikacji
 │   ├── components/  → Layout, Header, Footer, CookieBanner, SmartImage, ...
 │   ├── pages/       → Strony serwisu (Home, Meshtastic, MeshCore, Reticulum, PMR446, CB,
-│   │                  Systems, Plan, Resources, Tests, Privacy, Cookies, Accessibility, EAA)
+│   │                  Systems, Plan, Resources, Tests, CheatSheet, Privacy, Cookies, Accessibility, EAA)
 │   │   └── cb/ plan/ pmr/ systems/  → podsekcje dużych stron
 │   ├── hooks/, lib/ → Pomocnicze hooki i funkcje
 │   └── shadcn.css   → Style bazowe (zmienne Tailwind/shadcn)
-├── public/          🖼️ Zasoby statyczne kopiowane do dist/ (images/*.webp, favicon.svg, robots.txt)
+├── public/          🖼️ Zasoby statyczne kopiowane do dist/ (images/*.webp, icons/*.png, favicon.svg,
+│                       manifest.webmanifest, sw.js, robots.txt)
 ├── scripts/         🔧 build.mjs — build i serwer deweloperski (esbuild + Tailwind)
 ├── .github/workflows/ ⚙️ pages.yml (wdrożenie na GitHub Pages), ci.yml (build + typecheck dla PR)
 ├── index.html       📄 Szablon strony (wejście dla buildu)
@@ -31,4 +32,5 @@
 - Katalog dist/ jest generowany — nie edytuj go ręcznie i nie dodawaj do repozytorium
 - Obrazy dodawaj do public/images/ w formacie WebP i odwołuj się do nich ścieżką względną (images/nazwa.webp)
 - Po pushu do gałęzi main strona jest automatycznie budowana i publikowana na GitHub Pages
+- PWA działa offline po pierwszej wizycie; przy wydaniu zmień CACHE_VERSION w public/sw.js
 - Projekt korzysta z technologii TypeScript i Tailwind CSS
